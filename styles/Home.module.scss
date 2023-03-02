@@ -25,16 +25,13 @@
   color: white;
   margin-block-end: 1rem;
   transform: translateY(-1rem);
+  font-weight: 100;
+  margin-top: 1rem;
 }
 
-/* .hero {
-
-  width: 80%;
-  height: 80%;
-  width: 20rem;
-  height: 60rem;
-  height: ''
-} */
+.hero {
+  max-width: 30rem;
+}
 
 .social {
   display: flex;
