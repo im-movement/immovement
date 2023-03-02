@@ -1,0 +1,43 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 80vh; */
+}
+
+.heading {
+  font-size: 4rem;
+  color: white;
+  font-style: italic;
+}
+
+.subHeading {
+  color: white;
+  margin-block-end: 1rem;
+  transform: translateY(-1rem);
+}
+
+/* .hero {
+
+  width: 80%;
+  height: 80%;
+  width: 20rem;
+  height: 60rem;
+  height: ''
+} */
+
+.social {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
