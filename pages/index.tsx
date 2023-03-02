@@ -33,11 +33,13 @@ const Home = () => {
             immovement
           </h1>
           <h2 className={styles.subHeading}>coming soon...</h2>
-          <Button title="sign up" onClick={()=>alert('sign up')} />
+          {/* <Button title="sign up" onClick={()=>alert('sign up')} /> */}
         </section>
         <section className={styles.social}>
-          <FaInstagram color="white" />
-          <FaTiktok color="white" />
+          <a href="https://instagram.com/isabellecmuller" rel="noreferer" target="_blank">
+            <FaInstagram size='2rem' color="white" />
+          </a>
+          {/* <FaTiktok color="white" /> */}
         </section>
       </main>
     </>

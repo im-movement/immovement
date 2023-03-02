@@ -39,5 +39,5 @@
 .social {
   display: flex;
   gap: 2rem;
-  padding: 2rem;
+  padding-bottom: 2rem;
 }
