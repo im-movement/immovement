@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '@/styles/Dashboard.module.scss'
-import NewPostForm from '@/components/NewPostForm';
-import NewEventForm from '@/components/NewEventForm';
+import { NewPostForm } from '@/components/NewPostForm';
+import { NewEventForm } from '@/components/NewEventForm';
 
 
 const Dashboard = () => {

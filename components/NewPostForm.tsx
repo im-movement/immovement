@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-import {addBlogPost, NewBlogPost} from '@/firebase/addData';
+import { addBlogPost, NewBlogPost } from '@/firebase/addData';
+import { Input } from './Input';
 
-const NewPostForm = () => {
+export const NewPostForm = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('');
@@ -21,9 +22,10 @@ const NewPostForm = () => {
       console.log(`New blog post ${title} added to Firestore!`);
     } catch (error) {
       console.error('Error adding blog post:', error);
+      // TODO: log error
     }
 
-    // Reset the form fields
+    // reset form fields
     setTitle('');
     setContent('');
     setAuthor('');
@@ -31,35 +33,10 @@ const NewPostForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="title">Title</label>
-        <input
-          id="title"
-          type="text"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="content">Content</label>
-        <textarea
-          id="content"
-          value={content}
-          onChange={(event) => setContent(event.target.value)}
-        ></textarea>
-      </div>
-      <div>
-        <label htmlFor="author">Author</label>
-        <input
-          id="author"
-          type="text"
-          value={author}
-          onChange={(event) => setAuthor(event.target.value)}
-        />
-      </div>
-      <button type="submit">Submit</button>
+        <Input title="Title" value={title} setValue={setTitle} required />
+        <Input title="Content" type="textarea" value={content} setValue={setContent} required />
+        <Input title="Author" value={author} setValue={setAuthor} required />
+        <button type="submit">Submit</button>
     </form>
   );
 };
-
-export default NewPostForm;
