@@ -1,5 +1,4 @@
 import { useState } from 'react';
-// import 'firebase/firestore';
 import { addEvent, NewEvent } from '@/firebase/addData';
 import { Input } from './Input';
 

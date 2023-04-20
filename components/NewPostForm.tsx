@@ -1,23 +1,15 @@
 import { useState } from 'react';
-import 'firebase/firestore';
-import {addData, addBlogPost} from '@/firebase/addData';
-
-
-interface BlogPost {
-  title: string;
-  content: string;
-  author: string;
-}
+import {addBlogPost, NewBlogPost} from '@/firebase/addData';
 
 const NewPostForm = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('');
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    const newPost: BlogPost = {
+    const newPost: NewBlogPost = {
       title,
       content,
       author    
