@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { addEvent, NewEvent } from '@/firebase/addData';
 import { Input } from './Input';
 

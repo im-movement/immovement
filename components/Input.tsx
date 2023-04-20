@@ -1,6 +1,4 @@
-import React from 'react';
 import styles from '@/styles/Input.module.scss'
-
 
 interface InputProps {
   title: string;

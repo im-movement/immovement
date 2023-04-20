@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import {addBlogPost, NewBlogPost} from '@/firebase/addData';
 
 const NewPostForm = () => {
