@@ -1,5 +1,6 @@
 import { NewEvent } from '@/firebase/addData';
 import { getEvents } from '@/firebase/getData';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export const Events = () => {
@@ -25,7 +26,11 @@ export const Events = () => {
         <h2>Events</h2>
         <ul>
           {events.length > 0 && events.map(event => (
-            <div>{event.title}</div>
+            <div>
+              <Link href={`/events/${event.id}`}>
+                {event.title}
+              </Link>
+            </div>
           ))}
         </ul>
       </section>

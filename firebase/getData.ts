@@ -43,3 +43,15 @@ export const getBlogPost = async (id: string) => {
     console.log("No such document!");
   }
 }
+
+export const getEvent = async (id: string) => {
+  const docRef = doc(db, "events", id);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    return docSnap.data();
+  } else {
+    // TODO: log error
+    console.log("No such document!");
+  }
+}

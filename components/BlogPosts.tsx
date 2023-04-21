@@ -26,9 +26,11 @@ export const BlogPosts = () => {
         <h2>Blog posts</h2>
         <ul>
           {posts.length > 0 && posts.map(post => (
+            <div>
               <Link href={`/blog/${post.id}`}>
-                <div>{post.title}</div>
+                {post.title}
               </Link>
+            </div>
           ))}
         </ul>
       </section>
