@@ -19,8 +19,6 @@ export const Events = () => {
         fetchData()
     }, [])
 
-  console.log("111", events)
-
   if (loading) return <div>Loading...</div>
   return (
       <div>
