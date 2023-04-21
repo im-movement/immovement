@@ -1,0 +1,36 @@
+import { NewEvent } from '@/firebase/addData';
+import { getEvents } from '@/firebase/getData';
+import { useEffect, useState } from 'react';
+
+export const Events = () => {
+  const [loading, setLoading] = useState(false)
+  const [events, setEvents] = useState<NewEvent[]>([])
+
+  const fetchData = async () => {
+        setLoading(true)
+
+        const res = await getEvents()
+
+        setEvents([...res])
+        setLoading(false)
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+  console.log("111", events)
+
+  if (loading) return <div>Loading...</div>
+  return (
+      <div>
+        <h2>Events</h2>
+        <ul>
+          {events.length > 0 && events.map(event => (
+              <div>{event.title}</div>
+          ))}
+        </ul>
+      </div>
+  );
+};
+

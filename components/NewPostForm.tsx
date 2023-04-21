@@ -39,4 +39,4 @@ export const NewPostForm = () => {
         <button type="submit">Submit</button>
     </form>
   );
-};
+};  

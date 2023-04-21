@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '@/styles/Dashboard.module.scss'
 import { NewPostForm } from '@/components/NewPostForm';
 import { NewEventForm } from '@/components/NewEventForm';
+import { Events } from '@/components/Events';
 
 
 const Dashboard = () => {
@@ -22,6 +23,9 @@ const Dashboard = () => {
         <section>
             <h2>Add new event</h2>
             <NewEventForm/>
+        </section>
+        <section>
+          <Events />
         </section>
       </main>
     </>
