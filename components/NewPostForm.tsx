@@ -32,11 +32,14 @@ export const NewPostForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-        <Input title="Title" value={title} setValue={setTitle} required />
-        <Input title="Content" type="textarea" value={content} setValue={setContent} required />
-        <Input title="Author" value={author} setValue={setAuthor} required />
-        <button type="submit">Submit</button>
-    </form>
+    <section>
+      <h2>Add new blog post</h2>
+      <form onSubmit={handleSubmit}>
+          <Input title="Title" value={title} setValue={setTitle} required />
+          <Input title="Content" type="textarea" value={content} setValue={setContent} required />
+          <Input title="Author" value={author} setValue={setAuthor} required />
+          <button type="submit">Submit</button>
+      </form>
+    </section>
   );
 };  

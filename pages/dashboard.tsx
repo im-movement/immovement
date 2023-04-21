@@ -3,6 +3,7 @@ import styles from '@/styles/Dashboard.module.scss'
 import { NewPostForm } from '@/components/NewPostForm';
 import { NewEventForm } from '@/components/NewEventForm';
 import { Events } from '@/components/Events';
+import { BlogPosts } from '@/components/BlogPosts';
 
 
 const Dashboard = () => {
@@ -15,18 +16,10 @@ const Dashboard = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        
-        <section>
-          <h2>Add new blog post</h2>
-          <NewPostForm/>
-        </section>
-        <section>
-            <h2>Add new event</h2>
-            <NewEventForm/>
-        </section>
-        <section>
-          <Events />
-        </section>
+        <NewPostForm/>
+        <NewEventForm/>
+        <BlogPosts />
+        <Events />
       </main>
     </>
   )

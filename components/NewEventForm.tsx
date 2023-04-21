@@ -46,16 +46,19 @@ export const NewEventForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-        <Input title="Title" value={title} setValue={setTitle} required />
-        <Input title="Date" type="date" value={date} setValue={setDate} required />
-        <Input title="Time" type="time" value={time} setValue={setTime} required />
-        <Input title="Location" value={location} setValue={setLocation} required />
-        <Input title="Description" value={description} setValue={setDescription}/>
-        <Input title="Featured image" type="file" value={featuredImage} setValue={setFeaturedImage} required />
-        <Input title="Capacity" type="number" value={capacity} setValue={setCapacity} required />
-        <Input title="Price" type="number" value={price} setValue={setPrice} required />
-        <button type="submit">Submit</button>
-    </form>
+    <section>
+      <h2>Add new event</h2>
+      <form onSubmit={handleSubmit}>
+          <Input title="Title" value={title} setValue={setTitle} required />
+          <Input title="Date" type="date" value={date} setValue={setDate} required />
+          <Input title="Time" type="time" value={time} setValue={setTime} required />
+          <Input title="Location" value={location} setValue={setLocation} required />
+          <Input title="Description" value={description} setValue={setDescription}/>
+          <Input title="Featured image" type="file" value={featuredImage} setValue={setFeaturedImage} required />
+          <Input title="Capacity" type="number" value={capacity} setValue={setCapacity} required />
+          <Input title="Price" type="number" value={price} setValue={setPrice} required />
+          <button type="submit">Submit</button>
+      </form>
+    </section>
   );
 };

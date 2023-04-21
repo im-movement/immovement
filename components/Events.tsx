@@ -21,14 +21,14 @@ export const Events = () => {
 
   if (loading) return <div>Loading...</div>
   return (
-      <div>
+      <section>
         <h2>Events</h2>
         <ul>
           {events.length > 0 && events.map(event => (
-              <div>{event.title}</div>
+            <div>{event.title}</div>
           ))}
         </ul>
-      </div>
+      </section>
   );
 };
 
