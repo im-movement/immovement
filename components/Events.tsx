@@ -7,18 +7,18 @@ export const Events = () => {
   const [loading, setLoading] = useState(false)
   const [events, setEvents] = useState<NewEvent[]>([])
 
-  const fetchData = async () => {
-    setLoading(true)
-
-    const res = await getEvents()
-
-    setEvents([...res])
-    setLoading(false)
-  }
-
-    useEffect(() => {
+  
+  useEffect(() => {
+      const fetchData = async () => {
+        setLoading(true)
+    
+        const res = await getEvents()
+    
+        setEvents([...res])
+        setLoading(false)
+      }
         fetchData()
-    }, [fetchData])
+    }, [])
 
   if (loading) return <div>Loading...</div>
   return (

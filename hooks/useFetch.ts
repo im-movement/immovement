@@ -5,24 +5,25 @@ export const useFetch = (funk: () => void) => {
   const [data, setData] = useState();
   const [error, setError] = useState();
 
-  const fetchData = async () => {
-    setLoading(true);
-
-    try {  
-      const res = await funk();
-      // TODO: fix type error
-      // @ts-ignore
-      setData(res);
-      setLoading(false);
-    } catch (e) {
-      // TODO: fix type error
-      // @ts-ignore
-      setError(e);
-      setLoading(false);
-    }
-  }
+  
 
     useEffect(() => {
+      const fetchData = async () => {
+      setLoading(true);
+
+      try {  
+        const res = await funk();
+        // TODO: fix type error
+        // @ts-ignore
+        setData(res);
+        setLoading(false);
+        } catch (e) {
+          // TODO: fix type error
+          // @ts-ignore
+          setError(e);
+          setLoading(false);
+      }
+      }
         fetchData();
     }, [])
 

@@ -1,36 +1,38 @@
+"use client";
+import React, { useState, useEffect } from "react";
 import { NewBlogPost } from "@/firebase/addData"
 import { getBlogPost } from "@/firebase/getData"
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
 
-const Post = () => {
+interface PageProps {
+  params: { id: string };
+}
+
+const Page: React.FC<PageProps> = ({params}) => {
   const [loading, setLoading] = useState(true)
   const [post, setPost] = useState<NewBlogPost>()
 
-  const router = useRouter();
-  const { id } = router.query;
+  const id = params.id;
 
-  const fetchData = async () => {
-    setLoading(true)
-
-    // TODO: fix type error
-    // @ts-ignore
-    const res = await getBlogPost(id)
-
-    // TODO: fix type error
-    // @ts-ignore
-    setPost(res)
-    setLoading(false)
-  }
-
-    useEffect(() => {
+  
+  useEffect(() => {
+      const fetchData = async () => {
+        setLoading(true)
+    
+        // TODO: fix type error
+        // @ts-ignore
+        const res = await getBlogPost(id)
+    
+        // TODO: fix type error
+        // @ts-ignore
+        setPost(res)
+        setLoading(false)
+      }
         fetchData()
     }, [])
 
   if (loading) return <div>Loading...</div>
-
   return (
-    <div>
+    <section>
       <div>Post</div>
       {/* TODO: fix type error */}
       {/* @ts-ignore */}
@@ -44,8 +46,8 @@ const Post = () => {
       {/* TODO: fix type error */}
       {/* @ts-ignore */}
       <p>{post.content}</p>
-    </div>
-  )
+    </section>
+  );
 }
 
-export default Post;
+export default Page;
