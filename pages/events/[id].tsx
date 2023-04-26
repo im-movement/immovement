@@ -1,3 +1,4 @@
+import { Modal } from "@/components/Modal"
 import { NewEvent } from "@/firebase/addData"
 import { getEvent } from "@/firebase/getData"
 import { useFetch } from "@/hooks/useFetch"
@@ -31,6 +32,7 @@ const Event = () => {
 
   return (
     <div>
+      <Modal title="Edit" />
       <div>Event</div>
       <h2>{event.title}</h2>
       {/* <h3>{event.author}</h3> */}

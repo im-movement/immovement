@@ -8,13 +8,13 @@ export const Events = () => {
   const [events, setEvents] = useState<NewEvent[]>([])
 
   const fetchData = async () => {
-        setLoading(true)
+    setLoading(true)
 
-        const res = await getEvents()
+    const res = await getEvents()
 
-        setEvents([...res])
-        setLoading(false)
-    }
+    setEvents([...res])
+    setLoading(false)
+  }
 
     useEffect(() => {
         fetchData()
