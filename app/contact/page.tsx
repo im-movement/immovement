@@ -18,7 +18,7 @@ const Page = () => {
   return (
     <>
       <h1>Contact</h1>
-      <form name="contact" data-netlify={true} onSubmit={handleSubmit}>
+        <form name="contact" data-netlify={true} method="POST" onSubmit={handleSubmit}>
         <Input required value={name} setValue={setName} title="Name" />
         <Input required value={email} setValue={setEmail} type="email" title="Email address" />
         <Input required value={message} setValue={setMessage} type="textarea" title="Message" />
