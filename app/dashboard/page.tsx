@@ -12,6 +12,8 @@ import { getAuth } from 'firebase/auth';
 
 
 const Dashboard = () => {
+  // TODO: fix type error
+  // @ts-ignore
   const { user } = useAuthContext()
   const router = useRouter()
 

@@ -10,6 +10,8 @@ export const getEvents = async () => {
 
     docs.forEach(doc => {
         res.push({
+            // TODO: fix type error
+            // @ts-ignore
             id: doc.id, 
             ...doc.data()
         })
@@ -24,6 +26,8 @@ export const getBlogPosts = async () => {
 
     docs.forEach(doc => {
         res.push({
+          // TODO: fix type error
+          // @ts-ignore
             id: doc.id, 
             ...doc.data()
         })

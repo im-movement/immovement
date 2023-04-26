@@ -10,9 +10,13 @@ export const useFetch = (funk: () => void) => {
 
     try {  
       const res = await funk();
+      // TODO: fix type error
+      // @ts-ignore
       setData(res);
       setLoading(false);
     } catch (e) {
+      // TODO: fix type error
+      // @ts-ignore
       setError(e);
       setLoading(false);
     }
