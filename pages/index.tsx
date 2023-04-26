@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.scss'
-import hero from '../public/izzy.jpg'
 import { FaInstagram, FaTiktok } from 'react-icons/fa';
+import NewPostForm from '@/components/NewPostForm';
 // import { Button } from '@/components/button'
 
 // const inter = Inter({ subsets: ['latin'] })
