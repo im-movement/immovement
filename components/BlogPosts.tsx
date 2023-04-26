@@ -18,15 +18,15 @@ export const BlogPosts = () => {
 
     useEffect(() => {
         fetchData()
-    }, [])
+    }, [fetchData])
 
   if (loading) return <div>Loading...</div>
   return (
       <section>
         <h2>Blog posts</h2>
         <ul>
-          {posts.length > 0 && posts.map(post => (
-            <div>
+          {posts.length > 0 && posts.map((post, i) => (
+            <div key={i}>
               <Link href={`/blog/${post.id}`}>
                 {post.title}
               </Link>

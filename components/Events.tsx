@@ -18,15 +18,15 @@ export const Events = () => {
 
     useEffect(() => {
         fetchData()
-    }, [])
+    }, [fetchData])
 
   if (loading) return <div>Loading...</div>
   return (
       <section>
         <h2>Events</h2>
         <ul>
-          {events.length > 0 && events.map(event => (
-            <div>
+          {events.length > 0 && events.map((event, i) => (
+            <div key={i}>
               <Link href={`/events/${event.id}`}>
                 {event.title}
               </Link>

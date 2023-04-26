@@ -31,7 +31,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!isAdmin) setTimeout(()=>router.push("/login"), 2000)
-  }, [user])
+  }, [user, isAdmin, router])
 
   if (!isAdmin) return <div>Not authenticated</div>
 
