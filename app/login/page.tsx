@@ -22,7 +22,7 @@ const Page: React.FC = () => {
   };
   return (
     <>
-      <h1>Sign in</h1>
+      <h1>Log in</h1>
       <form onSubmit={handleForm} className="form">
         <label htmlFor="email">
           <p>Email</p>

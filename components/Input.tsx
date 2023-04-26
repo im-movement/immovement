@@ -2,7 +2,7 @@ import styles from '@/styles/Input.module.scss'
 
 interface InputProps {
   title: string;
-  type?: "text" | "number" | "date" | "time" | "file" | "textarea";
+  type?: "text" | "number" | "date" | "time" | "file" | "textarea" | "email";
   value: string;
   setValue: (v: string) => void;
   required?: boolean;
