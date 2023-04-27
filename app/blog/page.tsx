@@ -35,20 +35,20 @@ const Page: React.FC = () => {
   if (error) return <div>{error.toString()}</div>
 
   return (
-    <section>
-        <h2>Blog posts</h2>
-        <ul>
-          {posts.length > 0 && posts.map((post, i) => (
-            <div key={i}>
-              {/* TODO: */}
-              {/* @ts-ignore */}
-              <Link href={`/blog/${post.id}`}>
-                {post.title}
-              </Link>
-            </div>
-          ))}
-        </ul>
-      </section>
+      <section>
+          <h2>Blog posts</h2>
+          <ul>
+            {posts.length > 0 && posts.map((post, i) => (
+              <div key={i}>
+                {/* TODO: */}
+                {/* @ts-ignore */}
+                <Link href={`/blog/${post.id}`}>
+                  {post.title}
+                </Link>
+              </div>
+            ))}
+          </ul>
+        </section>
   );
 }
 
