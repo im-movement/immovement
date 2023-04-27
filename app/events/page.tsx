@@ -1,8 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { NewBlogPost, NewEvent } from '@/firebase/addData';
-import { getBlogPosts, getEvents } from '@/firebase/getData';
+import { NewEvent } from '@/firebase/addData';
+import { getEvents } from '@/firebase/getData';
 import Link from 'next/link';
+
+// TODO: pagination
+// https://firebase.google.com/docs/firestore/query-data/query-cursors
 
 const Page: React.FC = () => {
   const [loading, setLoading] = useState(false)
@@ -34,6 +37,8 @@ const Page: React.FC = () => {
 
   // TODO: error display
   if (error) return <div>{error.toString()}</div>
+
+  if (!events) return <p>No events found</p>
 
   return (
     <section>

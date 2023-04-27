@@ -1,9 +1,11 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { NewEvent } from "@/firebase/addData"
 import { getEvent } from "@/firebase/getData"
 import { Modal } from "@/components/Modal";
 import Link from "next/link";
+import { notFound } from 'next/navigation'
+import Loading from "./loading";
 
 interface PageProps {
   params: { id: string };
@@ -44,14 +46,14 @@ const Page: React.FC<PageProps> = ({params}) => {
   return (
     <>
       <Link href='/events'>{'< Back to all events'}</Link>
-      <section>
-        {/* <Modal title="Edit" /> */}
-        <div>Event</div>
-        {/* TODO: fix type error */}
-        {/* @ts-ignore */}
-        <h2>{event.title}</h2>
-      </section>
-      <button onClick={handleSignup}>Sign up</button>
+        <section>
+          {/* <Modal title="Edit" /> */}
+          <div>Event</div>
+          {/* TODO: fix type error */}
+          {/* @ts-ignore */}
+          <h2>{event.title}</h2>
+        </section>
+        <button onClick={handleSignup}>Sign up</button>
     </>
   );
 }

@@ -3,6 +3,9 @@ import { getEvents } from '@/firebase/getData';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
+// TODO: pagination
+// https://firebase.google.com/docs/firestore/query-data/query-cursors
+
 export const Events = () => {
   const [loading, setLoading] = useState(false)
   const [events, setEvents] = useState<NewEvent[]>([])
@@ -21,6 +24,9 @@ export const Events = () => {
     }, [])
 
   if (loading) return <div>Loading...</div>
+
+  if (!events) return <p>No events found</p>
+
   return (
       <section>
         <h2>Events</h2>

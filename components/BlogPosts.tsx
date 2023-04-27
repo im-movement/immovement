@@ -1,7 +1,10 @@
-import { NewBlogPost, NewEvent } from '@/firebase/addData';
+import { NewBlogPost } from '@/firebase/addData';
 import { getBlogPosts } from '@/firebase/getData';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+
+// TODO: pagination
+// https://firebase.google.com/docs/firestore/query-data/query-cursors
 
 export const BlogPosts = () => {
   const [loading, setLoading] = useState(false)
@@ -22,6 +25,11 @@ export const BlogPosts = () => {
     }, [])
 
   if (loading) return <div>Loading...</div>
+
+  if (!posts) {
+    return <p>No posts found</p>
+  }
+
   return (
       <section>
         <h2>Blog posts</h2>

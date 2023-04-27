@@ -12,8 +12,7 @@ import { getAuth } from 'firebase/auth';
 
 
 const Dashboard = () => {
-  // TODO: fix type error
-  // @ts-ignore
+
   const { user } = useAuthContext()
   const router = useRouter()
 
@@ -29,10 +28,10 @@ const Dashboard = () => {
     }
   }
 
-  const isAdmin = user !== null && user.uid === process.env.NEXT_PUBLIC_ADMIN_UID ? true : false;
+  const isAdmin = user !== null && user?.uid === process.env.NEXT_PUBLIC_ADMIN_UID ? true : false;
 
   useEffect(() => {
-    if (!isAdmin) setTimeout(()=>router.push("/login"), 2000)
+    if (!isAdmin) setTimeout(() => router.push("/login"), 1000)
   }, [user, isAdmin, router])
 
   if (!isAdmin) return <div>Not authenticated</div>
