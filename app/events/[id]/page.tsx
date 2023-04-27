@@ -4,8 +4,6 @@ import { NewEvent } from "@/firebase/addData"
 import { getEvent } from "@/firebase/getData"
 import { Modal } from "@/components/Modal";
 import Link from "next/link";
-import { notFound } from 'next/navigation'
-import Loading from "./loading";
 
 interface PageProps {
   params: { id: string };
@@ -43,6 +41,7 @@ const Page: React.FC<PageProps> = ({params}) => {
   }
 
   if (loading) return <div>Loading...</div>
+  
   return (
     <>
       <Link href='/events'>{'< Back to all events'}</Link>

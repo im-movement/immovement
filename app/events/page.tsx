@@ -38,7 +38,7 @@ const Page: React.FC = () => {
   // TODO: error display
   if (error) return <div>{error.toString()}</div>
 
-  if (!events) return <p>No events found</p>
+  if (!events.length) return <p>No events found</p>
 
   return (
     <section>
