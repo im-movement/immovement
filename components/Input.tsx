@@ -13,7 +13,7 @@ export const Input: React.FC<InputProps> = ({ title, type = "text", value, setVa
     return (
       <div>
         <label htmlFor={title}>{title}: </label>
-        <input onChange={(e) => setValue(e.target.value)} id={title} type={type} value={value} required />
+        <input onChange={(e) => setValue(e.target.value)} id={title} type={type} value={value} name={title} required />
       </div>
     )
 };
