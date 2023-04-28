@@ -24,11 +24,11 @@ export const NewEventForm = () => {
       description,
       featuredImage,
       capacity,
-      price,    
+      price,
     };
 
     try {
-      await addEvent(newEvent)
+      await addEvent(newEvent);
     } catch (error) {
       console.error('Error adding event:', error);
       // TODO: log error
@@ -49,15 +49,54 @@ export const NewEventForm = () => {
     <section>
       <h2>Add new event</h2>
       <form onSubmit={handleSubmit}>
-          <Input title="Title" value={title} setValue={setTitle} required />
-          <Input title="Date" type="date" value={date} setValue={setDate} required />
-          <Input title="Time" type="time" value={time} setValue={setTime} required />
-          <Input title="Location" value={location} setValue={setLocation} required />
-          <Input title="Description" value={description} setValue={setDescription}/>
-          <Input title="Featured image" type="file" value={featuredImage} setValue={setFeaturedImage} required />
-          <Input title="Capacity" type="number" value={capacity} setValue={setCapacity} required />
-          <Input title="Price" type="number" value={price} setValue={setPrice} required />
-          <button type="submit">Submit</button>
+        <Input title="Title" value={title} setValue={setTitle} required />
+        <Input
+          title="Date"
+          type="date"
+          value={date}
+          setValue={setDate}
+          required
+        />
+        <Input
+          title="Time"
+          type="time"
+          value={time}
+          setValue={setTime}
+          required
+        />
+        <Input
+          title="Location"
+          value={location}
+          setValue={setLocation}
+          required
+        />
+        <Input
+          title="Description"
+          value={description}
+          setValue={setDescription}
+        />
+        <Input
+          title="Featured image"
+          type="file"
+          value={featuredImage}
+          setValue={setFeaturedImage}
+          required
+        />
+        <Input
+          title="Capacity"
+          type="number"
+          value={capacity}
+          setValue={setCapacity}
+          required
+        />
+        <Input
+          title="Price"
+          type="number"
+          value={price}
+          setValue={setPrice}
+          required
+        />
+        <button type="submit">Submit</button>
       </form>
     </section>
   );

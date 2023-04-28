@@ -1,6 +1,6 @@
-"use client";
-import Head from 'next/head'
-import styles from '@/styles/Dashboard.module.scss'
+'use client';
+import Head from 'next/head';
+import styles from '@/styles/Dashboard.module.scss';
 import { NewPostForm } from '@/components/NewPostForm';
 import { NewEventForm } from '@/components/NewEventForm';
 import { Events } from '@/components/Events';
@@ -10,31 +10,32 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { getAuth } from 'firebase/auth';
 
-
 const Dashboard = () => {
-
-  const { user } = useAuthContext()
-  const router = useRouter()
+  const { user } = useAuthContext();
+  const router = useRouter();
 
   const signOut = async () => {
-      const auth = getAuth();
-  
-      try {
-        await auth.signOut()
-        router.push("/login")
-      } catch (e) {
-        // TODO: log error
-        console.error(e)
-    }
-  }
+    const auth = getAuth();
 
-  const isAdmin = user !== null && user?.uid === process.env.NEXT_PUBLIC_ADMIN_UID ? true : false;
+    try {
+      await auth.signOut();
+      router.push('/login');
+    } catch (e) {
+      // TODO: log error
+      console.error(e);
+    }
+  };
+
+  const isAdmin =
+    user !== null && user?.uid === process.env.NEXT_PUBLIC_ADMIN_UID
+      ? true
+      : false;
 
   useEffect(() => {
-    if (!isAdmin) setTimeout(() => router.push("/login"), 1000)
-  }, [user, isAdmin, router])
+    if (!isAdmin) setTimeout(() => router.push('/login'), 1000);
+  }, [user, isAdmin, router]);
 
-  if (!isAdmin) return <div>Not authenticated</div>
+  if (!isAdmin) return <div>Not authenticated</div>;
 
   return (
     <>
@@ -45,15 +46,14 @@ const Dashboard = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <NewPostForm/>
-        <NewEventForm/>
+        <NewPostForm />
+        <NewEventForm />
         <BlogPosts />
         <Events />
         <button onClick={signOut}>Sign out</button>
       </main>
     </>
-  )
-}
+  );
+};
 
 export default Dashboard;
-

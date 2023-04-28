@@ -1,11 +1,11 @@
-"use client";
-import React, { useState } from "react";
-import signIn from "@/firebase/signIn";
-import { useRouter } from "next/navigation";
+'use client';
+import React, { useState } from 'react';
+import signIn from '@/firebase/signIn';
+import { useRouter } from 'next/navigation';
 
 const Page: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const router = useRouter();
 
   const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -18,7 +18,7 @@ const Page: React.FC = () => {
       return console.error(error);
     }
 
-    return router.push("/dashboard");
+    return router.push('/dashboard');
   };
   return (
     <>
@@ -26,16 +26,30 @@ const Page: React.FC = () => {
       <form onSubmit={handleForm} className="form">
         <label htmlFor="email">
           <p>Email</p>
-          <input onChange={(e) => setEmail(e.target.value)} required type="email" name="email" id="email" placeholder="example@mail.com" />
+          <input
+            onChange={e => setEmail(e.target.value)}
+            required
+            type="email"
+            name="email"
+            id="email"
+            placeholder="example@mail.com"
+          />
         </label>
         <label htmlFor="password">
           <p>Password</p>
-          <input onChange={(e) => setPassword(e.target.value)} required type="password" name="password" id="password" placeholder="password" />
+          <input
+            onChange={e => setPassword(e.target.value)}
+            required
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password"
+          />
         </label>
         <button type="submit">Sign in</button>
       </form>
     </>
   );
-}
+};
 
 export default Page;

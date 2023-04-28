@@ -1,15 +1,16 @@
 import React from 'react';
-import styles from '@/styles/Button.module.scss'
-
+import styles from '@/styles/Button.module.scss';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
   // showIcon: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({ title, 
+export const Button: React.FC<ButtonProps> = ({
+  title,
   // showIcon,
-   ...props }) => {
+  ...props
+}) => {
   return (
     <button className={styles.button} {...props}>
       {title}

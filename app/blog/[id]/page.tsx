@@ -1,36 +1,35 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { DocumentData } from "@firebase/firestore";
+'use client';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { DocumentData } from '@firebase/firestore';
 
-import { getBlogPost } from "@/firebase/getData"
+import { getBlogPost } from '@/firebase/getData';
 
 interface PageProps {
   params: { id: string };
 }
 
-const Page: React.FC<PageProps> = ({params}) => {
-  const [loading, setLoading] = useState(true)
-  const [post, setPost] = useState<DocumentData>()
+const Page: React.FC<PageProps> = ({ params }) => {
+  const [loading, setLoading] = useState(true);
+  const [post, setPost] = useState<DocumentData>();
 
   const id = params.id;
 
-  
   useEffect(() => {
-      const fetchData = async () => {
-        setLoading(true)
-        const res = await getBlogPost(id)
-        setPost(res)
-        setLoading(false)
-      }
-        fetchData()
-    }, [])
+    const fetchData = async () => {
+      setLoading(true);
+      const res = await getBlogPost(id);
+      setPost(res);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
 
-  if (loading) return <div>Loading...</div>
+  if (loading) return <div>Loading...</div>;
 
   return (
     <>
-      <Link href='/blog'>{'< Back to all posts'}</Link>
+      <Link href="/blog">{'< Back to all posts'}</Link>
       <section>
         <div>Post</div>
         <h2>{post?.title}</h2>
@@ -40,6 +39,6 @@ const Page: React.FC<PageProps> = ({params}) => {
       </section>
     </>
   );
-}
+};
 
 export default Page;

@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '@/styles/Home.module.scss'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '@/styles/Home.module.scss';
 import { FaInstagram, FaTiktok } from 'react-icons/fa';
 // import { Button } from '@/components/button'
 
@@ -18,30 +18,31 @@ const Home = () => {
       <main className={styles.main}>
         <section className={styles.mainContainer}>
           <Image
-              className={styles.hero}
-              src="/izzy.jpg"
-              alt="Isabelle wearing all white standing under two chevron neon lights, one light is red and is one blue"
-              width={1290} 
-              height={1609}
-              layout="responsive"
-              // height={37}
-              // priority
-            />
-          <h1 className={styles.heading}>
-            immovement
-          </h1>
+            className={styles.hero}
+            src="/izzy.jpg"
+            alt="Isabelle wearing all white standing under two chevron neon lights, one light is red and is one blue"
+            width={1290}
+            height={1609}
+            layout="responsive"
+            // height={37}
+            // priority
+          />
+          <h1 className={styles.heading}>immovement</h1>
           <h2 className={styles.subHeading}>coming soon...</h2>
           {/* <Button title="sign up" onClick={()=>alert('sign up')} /> */}
         </section>
         <section className={styles.social}>
-          <a href="https://instagram.com/isabellecmuller" rel="noreferer" target="_blank">
-            <FaInstagram size='2rem' color="white" />
+          <a
+            href="https://instagram.com/isabellecmuller"
+            rel="noreferer"
+            target="_blank">
+            <FaInstagram size="2rem" color="white" />
           </a>
           {/* <FaTiktok color="white" /> */}
         </section>
       </main>
     </>
-  )
-}
+  );
+};
 
 export default Home;
