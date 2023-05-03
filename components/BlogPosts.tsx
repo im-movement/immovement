@@ -1,64 +1,50 @@
-import { NewBlogPost } from '@/firebase/addData';
-import { getBlogPosts } from '@/firebase/getData';
+import { BlogPost, useGetBlogPosts } from '@/firebase/getData';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { FaEdit } from 'react-icons/fa';
+import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 
 // TODO: pagination
 // https://firebase.google.com/docs/firestore/query-data/query-cursors
 
-export const BlogPosts = () => {
-  const [loading, setLoading] = useState(false);
-  const [posts, setPosts] = useState<NewBlogPost[]>([]);
-  // TODO: fix explicit any
-  // @ts-ignore
-  const [error, setError] = useState<any>();
+export const BlogPosts: React.FC = () => {
+  const { posts, loading, error } = useGetBlogPosts();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
+  const handleEdit = (p: BlogPost) => {
+    alert(`Edit ${p.title}`);
+  };
 
-        const { res } = await getBlogPosts();
-        // TODO: fix type error
-        // @ts-ignore
-        setPosts(res);
-        setLoading(false);
-      } catch (e) {
-        setError(e);
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
-
-  const handleEdit = () => {
-    alert('Edit');
+  const handleDelete = (p: BlogPost) => {
+    if (confirm(`Are you sure you want to delete ${p.title}?`)) {
+      deletePost(p);
+    }
   };
 
   if (loading) return <div>Loading...</div>;
-
-  if (!posts.length) {
+  if (error) return <div>{error.toString()}</div>;
+  if (!posts?.length) {
     return <p>No posts found</p>;
   }
-
-  if (error) return <div>{error.toString()}</div>;
 
   return (
     <section>
       <h2>Blog posts</h2>
       <ul>
-        {posts.length > 0 &&
-          posts.map((post, i) => (
-            <div key={i}>
-              {/* TODO: */}
-              {/* @ts-ignore */}
-              <Link href={`/blog/${post.id}`}>{post.title}</Link>
-              <button onClick={handleEdit}>
-                <FaEdit />
-              </button>
-            </div>
-          ))}
+        {posts.map((post: BlogPost, i) => (
+          <div key={post.id}>
+            {/* TODO: */}
+            {/* @ts-ignore */}
+            <Link href={`/blog/${post.id}`}>{post.title}</Link>
+            <button
+              aria-label={`Edit ${post.title}`}
+              onClick={() => handleEdit(post)}>
+              <FaEdit aria-hidden />
+            </button>
+            <button
+              aria-label={`Delete ${post.title}`}
+              onClick={() => handleDelete(post)}>
+              <FaTrashAlt aria-hidden />
+            </button>
+          </div>
+        ))}
       </ul>
     </section>
   );

@@ -1,43 +1,56 @@
-import { NewEvent } from '@/firebase/addData';
-import { getEvents } from '@/firebase/getData';
+import { useDeleteEvent } from '@/firebase';
+import { IEvent, useGetEvents } from '@/firebase/getData';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { FaEdit, FaListAlt, FaTrashAlt } from 'react-icons/fa';
 
 // TODO: pagination
 // https://firebase.google.com/docs/firestore/query-data/query-cursors
 
 export const Events = () => {
-  const [loading, setLoading] = useState(false);
-  const [events, setEvents] = useState<NewEvent[]>([]);
+  const { events, loading, error } = useGetEvents();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
+  const handleEdit = (e: IEvent) => {
+    alert(`Edit ${e.title}`);
+  };
 
-      const res = await getEvents();
-
-      setEvents(res);
-      setLoading(false);
-    };
-    fetchData();
-  }, []);
+  const handleDelete = (e: IEvent) => {
+    if (confirm(`Are you sure you want to delete ${e.title}?`)) {
+      useDeleteEvent(e);
+    }
+  };
 
   if (loading) return <div>Loading...</div>;
-
-  if (!events) return <p>No events found</p>;
+  if (error) return <div>{error.toString()}</div>;
+  if (!events?.length) return <p>No events found</p>;
 
   return (
     <section>
       <h2>Events</h2>
       <ul>
-        {events.length > 0 &&
-          events.map((event, i) => (
-            <div key={i}>
-              {/* TODO: fix type error */}
-              {/* @ts-ignore */}
-              <Link href={`/events/${event.id}`}>{event.title}</Link>
-            </div>
-          ))}
+        {events.map((event, i) => {
+          if (!event.hidden) {
+            return (
+              <div key={i}>
+                {/* TODO: fix type error */}
+                {/* @ts-ignore */}
+                <Link href={`/events/${event.id}`}>{event.title}</Link>
+                <button
+                  aria-label={`Edit ${event.title}`}
+                  onClick={() => handleEdit(event)}>
+                  <FaEdit aria-hidden />
+                </button>
+                <button
+                  aria-label={`Delete ${event.title}`}
+                  onClick={() => handleDelete(event)}>
+                  <FaTrashAlt aria-hidden />
+                </button>
+                <a href="">
+                  <FaListAlt aria-hidden />
+                </a>
+              </div>
+            );
+          }
+        })}
       </ul>
     </section>
   );

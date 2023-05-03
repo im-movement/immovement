@@ -44,7 +44,8 @@ export const NewPostForm = () => {
           required
         />
         <Input title="Author" value={author} setValue={setAuthor} required />
-        <button type="submit">Submit</button>
+        <button type="submit">Save as draft</button>
+        <button type="submit">Publish</button>
       </form>
     </section>
   );

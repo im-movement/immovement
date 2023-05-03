@@ -1,3 +1,5 @@
+// TODO:
+
 import firebase_app from './config';
 import {
   getFirestore,
@@ -12,6 +14,7 @@ export interface NewBlogPost {
   title: string;
   content: string;
   author: string;
+  hidden?: boolean;
 }
 
 export const addBlogPost = ({ title, content, author }: NewBlogPost) => {
@@ -33,6 +36,7 @@ export interface NewEvent {
   featuredImage: string;
   capacity: string;
   price: string;
+  hidden?: boolean;
 }
 
 export const addEvent = ({
