@@ -16,7 +16,7 @@ export const Events = () => {
 
       const res = await getEvents();
 
-      setEvents([...res]);
+      setEvents(res);
       setLoading(false);
     };
     fetchData();

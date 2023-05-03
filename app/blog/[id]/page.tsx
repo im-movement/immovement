@@ -31,7 +31,6 @@ const Page: React.FC<PageProps> = ({ params }) => {
     <>
       <Link href="/blog">{'< Back to all posts'}</Link>
       <section>
-        <div>Post</div>
         <h2>{post?.title}</h2>
         <h3>{post?.author}</h3>
         <h3>{new Date(post?.publishDate).toString()}</h3>

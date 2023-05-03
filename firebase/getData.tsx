@@ -9,6 +9,7 @@ import {
   DocumentData,
 } from 'firebase/firestore';
 import { NewBlogPost, NewEvent } from './addData';
+import { useEffect, useState } from 'react';
 
 const db = getFirestore(firebase_app);
 
@@ -40,27 +41,44 @@ export interface BlogPost {
   id: string;
 }
 
-export const getBlogPosts = async () => {
-  const res: DocumentData[] = new Array();
-  try {
-    const docs = await getDocs(
-      collection(db, 'blog-posts'),
-      // @ts-ignore
-      orderBy('dateCreated'),
-    );
+export const useGetBlogPosts = () => {
+  const [posts, setPost] = useState<BlogPost[]>();
+  const [loading, setLoading] = useState(true);
+  // TODO: fix explicit any
+  // @ts-ignore
+  const [error, setError] = useState<any>();
 
-    docs.forEach(doc => {
-      res.push({
-        id: doc.id,
-        ...doc.data(),
-      });
-    });
-  } catch (e) {
-    // TODO: logging
-    console.error(e);
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const res: DocumentData[] = new Array();
+        const docs = await getDocs(
+          collection(db, 'blog-posts'),
+          // @ts-ignore
+          orderBy('dateCreated'),
+        );
 
-  return { res };
+        docs.forEach(doc => {
+          res.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+        // @ts-ignore
+        setPost(res);
+        setLoading(false);
+      } catch (e) {
+        setLoading(true);
+        // TODO: logging
+        setError(e);
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return { posts, loading, error };
 };
 
 export const getBlogPost = async (id: string) => {
