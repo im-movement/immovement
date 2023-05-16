@@ -1,3 +1,4 @@
+import { deletePost } from '@/firebase';
 import { BlogPost, useGetBlogPosts } from '@/firebase/getData';
 import Link from 'next/link';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';

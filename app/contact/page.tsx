@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { Input } from '@/components/Input';
+import { Input } from '@/app/components/Input';
 
 const Page = () => {
   const [name, setName] = useState('');

@@ -2,7 +2,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { NewEvent } from '@/firebase/addData';
 import { getEvent } from '@/firebase/getData';
-import { Modal } from '@/components/Modal';
+import { Modal } from '@/app/components/Modal';
 import Link from 'next/link';
 
 interface PageProps {

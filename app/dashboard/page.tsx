@@ -1,10 +1,10 @@
 'use client';
 import Head from 'next/head';
 import styles from '@/styles/Dashboard.module.scss';
-import { NewPostForm } from '@/components/NewPostForm';
-import { NewEventForm } from '@/components/NewEventForm';
-import { Events } from '@/components/Events';
-import { BlogPosts } from '@/components/BlogPosts';
+import { NewPostForm } from '@/app/components/NewPostForm';
+import { NewEventForm } from '@/app/components/NewEventForm';
+import { Events } from '@/app/components/Events';
+import { BlogPosts } from '@/app/components/BlogPosts';
 import { useAuthContext } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
