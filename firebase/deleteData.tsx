@@ -15,7 +15,7 @@ export const useDeleteEvent = (e: IEvent) => {
       const docRef = doc(db, 'events', e.id);
       await updateDoc(docRef, { ...e, hidden: true });
       setLoading(false);
-      location.reload();
+      // location.reload();
     } catch (e) {
       setError(true);
       setLoading(false);
@@ -36,7 +36,7 @@ export const useDeletePost = (p: BlogPost) => {
       const docRef = doc(db, 'blog-posts', p.id);
       await updateDoc(docRef, { ...p, hidden: true });
       setLoading(false);
-      location.reload();
+      // location.reload();
     } catch (e) {
       setError(true);
       setLoading(false);

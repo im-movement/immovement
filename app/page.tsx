@@ -20,7 +20,7 @@ const Home = () => {
           <Image
             className={styles.hero}
             src="/izzy.jpg"
-            alt="Isabelle wearing all white standing under two chevron neon lights, one light is red and is one blue"
+            alt="Isabelle wearing all white standing under two chevron neon lights; one light is red and one is blue"
             width={1290}
             height={1609}
             layout="responsive"
