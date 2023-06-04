@@ -30,7 +30,9 @@ export const Event: React.FC<EventProps> = props => {
       )}
       {/* TODO: fix type error */}
       {/* @ts-ignore */}
-      <Link href={`/events/${event.id}`}>{event.title}</Link>
+      <Link target="_blank" href={`/events/${event.id}`}>
+        {event.title}
+      </Link>
       <button
         aria-label={`Edit ${event.title}`}
         onClick={() => handleEdit(event)}>

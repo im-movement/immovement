@@ -33,7 +33,9 @@ export const BlogPostDisplay: React.FC<BlogPostProps> = props => {
       )}
       {/* TODO: */}
       {/* @ts-ignore */}
-      <Link href={`/blog/${post.id}`}>{post.title}</Link>
+      <Link target="_blank" href={`/blog/${post.id}`}>
+        {post.title}
+      </Link>
       <button
         aria-label={`Edit ${post.title}`}
         onClick={() => handleEdit(post)}>
