@@ -1,7 +1,7 @@
 import { useState, FC, useEffect } from 'react';
 
 interface ModalProps {
-  title: string;
+  title: string | React.ReactNode;
   children?: React.ReactNode;
 }
 

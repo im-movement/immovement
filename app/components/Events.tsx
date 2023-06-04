@@ -17,7 +17,7 @@ export const Events = () => {
       <h2>Events</h2>
       <ul>
         {showEvents?.length ? (
-          showEvents?.map(event => <Event event={event} />)
+          showEvents?.map(event => <Event event={event} key={event.id} />)
         ) : (
           <p>No events found</p>
         )}
