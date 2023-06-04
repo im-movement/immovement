@@ -23,6 +23,11 @@ export const Event: React.FC<EventProps> = props => {
 
   return (
     <div>
+      {event.draft && (
+        <span style={{ backgroundColor: 'dodgerblue', color: 'white' }}>
+          Draft
+        </span>
+      )}
       {/* TODO: fix type error */}
       {/* @ts-ignore */}
       <Link href={`/events/${event.id}`}>{event.title}</Link>

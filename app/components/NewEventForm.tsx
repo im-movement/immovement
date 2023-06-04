@@ -41,6 +41,32 @@ export const NewEventForm = () => {
     setPrice('');
   };
 
+  const handleDraft = async () => {
+    const newEvent: NewEvent = {
+      title,
+      date,
+      time,
+      location,
+      description,
+      featuredImage,
+      capacity,
+      price,
+      draft: true,
+    };
+
+    await addEvent(newEvent);
+
+    // reset form field
+    setTitle('');
+    setDate('');
+    setTime('');
+    setLocation('');
+    setDescription('');
+    setFeaturedImage('');
+    setCapacity('');
+    setPrice('');
+  };
+
   return (
     <section>
       <h2>Add new event</h2>
@@ -92,6 +118,7 @@ export const NewEventForm = () => {
           setValue={setPrice}
           required
         />
+        <button onClick={handleDraft}>Save as draft</button>
         <button type="submit">Submit</button>
       </form>
     </section>

@@ -13,9 +13,15 @@ export interface NewBlogPost {
   content: string;
   author: string;
   hidden?: boolean;
+  draft?: boolean;
 }
 
-export const addBlogPost = ({ title, content, author }: NewBlogPost) => {
+export const addBlogPost = ({
+  title,
+  content,
+  author,
+  draft = false,
+}: NewBlogPost) => {
   const blogPostColRef = collection(db, 'blog-posts');
 
   try {
@@ -24,6 +30,7 @@ export const addBlogPost = ({ title, content, author }: NewBlogPost) => {
       content,
       author,
       publishDate: serverTimestamp(),
+      draft,
     });
   } catch (e) {
     throw e;
@@ -40,6 +47,7 @@ export interface NewEvent {
   capacity: string;
   price: string;
   hidden?: boolean;
+  draft?: boolean;
 }
 
 export const addEvent = ({
@@ -51,6 +59,7 @@ export const addEvent = ({
   featuredImage,
   capacity,
   price,
+  draft = false,
 }: NewEvent) => {
   const classColRef = collection(db, 'events');
 
@@ -64,6 +73,7 @@ export const addEvent = ({
       featuredImage,
       capacity,
       price,
+      draft,
     });
   } catch (e) {
     throw e;

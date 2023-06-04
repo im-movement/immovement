@@ -25,7 +25,12 @@ export const BlogPostDisplay: React.FC<BlogPostProps> = props => {
   };
 
   return (
-    <div key={post.id}>
+    <div>
+      {post.draft && (
+        <span style={{ backgroundColor: 'dodgerblue', color: 'white' }}>
+          Draft
+        </span>
+      )}
       {/* TODO: */}
       {/* @ts-ignore */}
       <Link href={`/blog/${post.id}`}>{post.title}</Link>

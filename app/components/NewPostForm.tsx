@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { addBlogPost, NewBlogPost } from '@/firebase/addData';
 import { Input } from './Input';
+import Router from 'next/router';
 
 export const NewPostForm = () => {
   const [title, setTitle] = useState('');
@@ -23,6 +24,24 @@ export const NewPostForm = () => {
     setTitle('');
     setContent('');
     setAuthor('');
+    // Router.reload();
+  };
+
+  const handleDraft = async () => {
+    const newPost: NewBlogPost = {
+      title,
+      content,
+      author,
+      draft: true,
+    };
+
+    await addBlogPost(newPost);
+
+    // reset form fields
+    setTitle('');
+    setContent('');
+    setAuthor('');
+    // Router.reload();
   };
 
   return (
@@ -38,7 +57,7 @@ export const NewPostForm = () => {
           required
         />
         <Input title="Author" value={author} setValue={setAuthor} required />
-        <button type="submit">Save as draft</button>
+        <button onClick={handleDraft}>Save as draft</button>
         <button type="submit">Publish</button>
       </form>
     </section>
