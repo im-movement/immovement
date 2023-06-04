@@ -20,8 +20,8 @@ export const BlogPosts: React.FC = () => {
     <section>
       <h2>Blog posts</h2>
       <ul>
-        {posts.map((post: BlogPost, i) => (
-          <BlogPostDisplay post={post} />
+        {posts.map((post: BlogPost) => (
+          <BlogPostDisplay key={post.id} post={post} />
         ))}
       </ul>
     </section>

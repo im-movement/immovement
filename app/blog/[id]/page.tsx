@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { DocumentData } from '@firebase/firestore';
+import { format } from 'date-fns';
 
 import { getBlogPost } from '@/firebase/getData';
 
@@ -33,7 +34,10 @@ const Page: React.FC<PageProps> = ({ params }) => {
       <section>
         <h2>{post?.title}</h2>
         <h3>{post?.author}</h3>
-        <h3>{new Date(post?.publishDate).toString()}</h3>
+        <h3>
+          {format(new Date(post?.publishDate.seconds * 1000), 'MM/dd/yyyy')}
+          {}
+        </h3>
         <p>{post?.content}</p>
       </section>
     </>
