@@ -1,5 +1,3 @@
-// TODO:
-
 import firebase_app from './config';
 import {
   getFirestore,
@@ -19,12 +17,15 @@ export interface NewBlogPost {
 
 export const addBlogPost = ({ title, content, author }: NewBlogPost) => {
   const blogPostColRef = collection(db, 'blog-posts');
-  return addDoc(blogPostColRef, {
+
+  addDoc(blogPostColRef, {
     title,
     content,
     author,
     publishDate: serverTimestamp(),
   });
+
+  location.reload();
 };
 
 export interface NewEvent {
@@ -50,7 +51,8 @@ export const addEvent = ({
   price,
 }: NewEvent) => {
   const classColRef = collection(db, 'events');
-  return addDoc(classColRef, {
+
+  addDoc(classColRef, {
     title,
     date,
     time,
@@ -60,4 +62,6 @@ export const addEvent = ({
     capacity,
     price,
   });
+
+  window.location.reload();
 };

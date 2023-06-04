@@ -1,5 +1,5 @@
 import { useDeletePost } from '@/firebase';
-import { BlogPost, useGetBlogPosts } from '@/firebase/getData';
+import { BlogPost } from '@/firebase/getData';
 import Link from 'next/link';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 
@@ -20,7 +20,7 @@ export const BlogPostDisplay: React.FC<BlogPostProps> = props => {
 
   const handleDelete = (p: BlogPost) => {
     if (confirm(`Are you sure you want to delete ${p.title}?`)) {
-      deletePost(p);
+      deletePost();
     }
   };
 

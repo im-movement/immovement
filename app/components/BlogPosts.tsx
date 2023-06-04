@@ -1,7 +1,4 @@
-import { useDeletePost } from '@/firebase';
 import { BlogPost, useGetBlogPosts } from '@/firebase/getData';
-import Link from 'next/link';
-import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { BlogPostDisplay } from './BlogPost';
 
 // TODO: pagination
@@ -10,19 +7,22 @@ import { BlogPostDisplay } from './BlogPost';
 export const BlogPosts: React.FC = () => {
   const { posts, loading, error } = useGetBlogPosts();
 
+  const showPosts = posts?.filter(p => p.hidden !== true);
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error.toString()}</div>;
-  if (!posts?.length) {
-    return <p>No posts found</p>;
-  }
 
   return (
     <section>
       <h2>Blog posts</h2>
       <ul>
-        {posts.map((post: BlogPost) => (
-          <BlogPostDisplay key={post.id} post={post} />
-        ))}
+        {showPosts?.length ? (
+          showPosts.map((post: BlogPost) => (
+            <BlogPostDisplay key={post.id} post={post} />
+          ))
+        ) : (
+          <p>No posts found</p>
+        )}
       </ul>
     </section>
   );

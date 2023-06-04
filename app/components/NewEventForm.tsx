@@ -25,13 +25,13 @@ export const NewEventForm = () => {
       featuredImage,
       capacity,
       price,
+      hidden: false,
     };
 
     try {
       await addEvent(newEvent);
     } catch (error) {
-      console.error('Error adding event:', error);
-      // TODO: log error
+      throw e;
     }
 
     // reset form field

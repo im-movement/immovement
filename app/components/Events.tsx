@@ -1,7 +1,5 @@
-import { useDeleteEvent } from '@/firebase';
-import { IEvent, useGetEvents } from '@/firebase/getData';
-import Link from 'next/link';
-import { FaEdit, FaListAlt, FaTrashAlt } from 'react-icons/fa';
+import { useGetEvents } from '@/firebase/getData';
+import { Event } from './Event';
 
 // TODO: pagination
 // https://firebase.google.com/docs/firestore/query-data/query-cursors
@@ -9,48 +7,20 @@ import { FaEdit, FaListAlt, FaTrashAlt } from 'react-icons/fa';
 export const Events = () => {
   const { events, loading, error } = useGetEvents();
 
-  const handleEdit = (e: IEvent) => {
-    alert(`Edit ${e.title}`);
-  };
-
-  const handleDelete = (e: IEvent) => {
-    if (confirm(`Are you sure you want to delete ${e.title}?`)) {
-      useDeleteEvent(e);
-    }
-  };
+  const showEvents = events?.filter(event => event.hidden !== true);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error.toString()}</div>;
-  if (!events?.length) return <p>No events found</p>;
 
   return (
     <section>
       <h2>Events</h2>
       <ul>
-        {events.map((event, i) => {
-          if (!event.hidden) {
-            return (
-              <div key={i}>
-                {/* TODO: fix type error */}
-                {/* @ts-ignore */}
-                <Link href={`/events/${event.id}`}>{event.title}</Link>
-                <button
-                  aria-label={`Edit ${event.title}`}
-                  onClick={() => handleEdit(event)}>
-                  <FaEdit aria-hidden />
-                </button>
-                <button
-                  aria-label={`Delete ${event.title}`}
-                  onClick={() => handleDelete(event)}>
-                  <FaTrashAlt aria-hidden />
-                </button>
-                <a href="">
-                  <FaListAlt aria-hidden />
-                </a>
-              </div>
-            );
-          }
-        })}
+        {showEvents?.length ? (
+          showEvents?.map(event => <Event event={event} />)
+        ) : (
+          <p>No events found</p>
+        )}
       </ul>
     </section>
   );

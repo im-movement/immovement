@@ -21,8 +21,7 @@ export const NewPostForm = () => {
       await addBlogPost(newPost);
       console.log(`New blog post ${title} added to Firestore!`);
     } catch (error) {
-      console.error('Error adding blog post:', error);
-      // TODO: log error
+      throw error;
     }
 
     // reset form fields
