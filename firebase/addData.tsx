@@ -18,14 +18,18 @@ export interface NewBlogPost {
 export const addBlogPost = ({ title, content, author }: NewBlogPost) => {
   const blogPostColRef = collection(db, 'blog-posts');
 
-  addDoc(blogPostColRef, {
-    title,
-    content,
-    author,
-    publishDate: serverTimestamp(),
-  });
+  try {
+    addDoc(blogPostColRef, {
+      title,
+      content,
+      author,
+      publishDate: serverTimestamp(),
+    });
+  } catch (e) {
+    throw e;
+  }
 
-  location.reload();
+  // location.reload();
 };
 
 export interface NewEvent {
@@ -63,5 +67,5 @@ export const addEvent = ({
     price,
   });
 
-  window.location.reload();
+  // window.location.reload();
 };

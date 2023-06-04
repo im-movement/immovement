@@ -9,6 +9,8 @@ export const BlogPosts: React.FC = () => {
 
   const showPosts = posts?.filter(p => p.hidden !== true);
 
+  console.log({ posts });
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error.toString()}</div>;
 
