@@ -28,8 +28,6 @@ export const addBlogPost = ({ title, content, author }: NewBlogPost) => {
   } catch (e) {
     throw e;
   }
-
-  // location.reload();
 };
 
 export interface NewEvent {
@@ -56,16 +54,18 @@ export const addEvent = ({
 }: NewEvent) => {
   const classColRef = collection(db, 'events');
 
-  addDoc(classColRef, {
-    title,
-    date,
-    time,
-    location,
-    description,
-    featuredImage,
-    capacity,
-    price,
-  });
-
-  // window.location.reload();
+  try {
+    addDoc(classColRef, {
+      title,
+      date,
+      time,
+      location,
+      description,
+      featuredImage,
+      capacity,
+      price,
+    });
+  } catch (e) {
+    throw e;
+  }
 };

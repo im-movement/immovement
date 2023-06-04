@@ -17,12 +17,7 @@ export const NewPostForm = () => {
       author,
     };
 
-    try {
-      await addBlogPost(newPost);
-      console.log(`New blog post ${title} added to Firestore!`);
-    } catch (error) {
-      throw error;
-    }
+    await addBlogPost(newPost);
 
     // reset form fields
     setTitle('');

@@ -28,11 +28,7 @@ export const NewEventForm = () => {
       hidden: false,
     };
 
-    try {
-      await addEvent(newEvent);
-    } catch (error) {
-      throw e;
-    }
+    await addEvent(newEvent);
 
     // reset form field
     setTitle('');

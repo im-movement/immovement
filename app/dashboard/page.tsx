@@ -22,7 +22,7 @@ const Dashboard = () => {
       router.push('/login');
     } catch (e) {
       // TODO: log error
-      console.error(e);
+      throw e;
     }
   };
 

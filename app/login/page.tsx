@@ -15,7 +15,7 @@ const Page: React.FC = () => {
 
     if (error) {
       // TODO: log error
-      return console.error(error);
+      throw e;
     }
 
     return router.push('/dashboard');
