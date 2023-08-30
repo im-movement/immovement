@@ -33,7 +33,7 @@ const Home = () => {
               // priority
             />
             <h1 className={styles.heading}>IM Movement</h1>
-            <h2 className={styles.subHeading}>coming soon...</h2>
+            <h2 className={styles.subHeading}>Coming soon...</h2>
             {/* <Button title="sign up" onClick={()=>alert('sign up')} /> */}
           </section>
           <section className={styles.screen}>
