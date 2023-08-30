@@ -1,0 +1,27 @@
+.header {
+  // padding-top: 2rem;
+  padding-inline: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  height: 10rem;
+  .logo {
+    display: flex;
+    flex-direction: column;
+  }
+  h1 {
+    color: white;
+  }
+  nav {
+    display: flex;
+    gap: 1rem;
+    color: white;
+  }
+  .social {
+    position: absolute;
+    top: 0;
+    right: 6;
+  }
+}
