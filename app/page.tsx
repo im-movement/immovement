@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '@/styles/Home.module.scss';
 import { FaInstagram } from 'react-icons/fa';
 import { Header } from './components/Header';
+import { ScrollSection } from './components/ScrollSection';
 // import { Button } from '@/components/button'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -20,6 +21,7 @@ const Home = () => {
       <div className={styles.backgroundContainer}>
         <Header />
         <main className={styles.main}>
+          <ScrollSection />
           <section className={styles.screen}>
             <Image
               className={styles.hero}
@@ -27,11 +29,11 @@ const Home = () => {
               alt="Isabelle wearing all white standing under two chevron neon lights; one light is red and one is blue"
               width={1290}
               height={1609}
-              placeholder="blur"
-              blurDataURL="/izzy.jpg"
+              // placeholder="blur"
+              // blurDataURL="/izzy.jpg"
+              priority
               layout="responsive"
               // height={37}
-              // priority
             />
             <h1 className={styles.heading}>IM Movement</h1>
             <h2 className={styles.subHeading}>Coming soon...</h2>

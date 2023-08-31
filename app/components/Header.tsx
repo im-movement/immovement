@@ -16,7 +16,7 @@ export const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Logo />
-        <h1>IM Movement</h1>
+        {/* <h1 visually-hidden>IM Movement</h1> */}
       </div>
       <nav>
         {LINKS.map(l => (
