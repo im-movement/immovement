@@ -5,6 +5,7 @@ import { DocumentData } from '@firebase/firestore';
 import { format } from 'date-fns';
 
 import { getBlogPost } from '@/firebase/getData';
+import { Loading } from '@/app/components/Loading';
 
 interface PageProps {
   params: { id: string };
@@ -26,7 +27,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
 
   return (
     <>

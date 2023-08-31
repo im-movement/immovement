@@ -1,5 +1,5 @@
 .header {
-  // padding-top: 2rem;
+  padding-top: var(—-header-padding);
   // width: 100%;
   padding-inline: 2rem;
   display: flex;
@@ -11,21 +11,22 @@
   right: 0;
   height: 10rem;
   z-index: 1;
-  .logo {
-    display: flex;
-    flex-direction: column;
-  }
+
   h1 {
     color: white;
   }
+
+  .navContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+
   nav {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     color: white;
-  }
-  .social {
-    position: absolute;
-    top: 0;
-    right: 6;
   }
 }

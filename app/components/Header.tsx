@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from '@/styles/Header.module.scss';
-import Logo from './Logo';
 import { FaInstagram } from 'react-icons/fa';
 import Link from 'next/link';
+
+import Logo from './Logo';
+import styles from '@/styles/Header.module.scss';
 
 const LINKS = [
   { title: 'Events', href: '/events' },
@@ -14,16 +15,15 @@ const LINKS = [
 export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <Logo />
-        {/* <h1 visually-hidden>IM Movement</h1> */}
+      <Logo />
+      <div className={styles.navContainer}>
+        <nav>
+          {LINKS.map(l => (
+            <Link href={l.href}>{l.title}</Link>
+          ))}
+        </nav>
+        <FaInstagram size="2rem" color="white" />
       </div>
-      <nav>
-        {LINKS.map(l => (
-          <Link href={l.href}>{l.title}</Link>
-        ))}
-      </nav>
-      {/* <FaInstagram className={styles.social} size="2rem" color="white" /> */}
     </header>
   );
 };

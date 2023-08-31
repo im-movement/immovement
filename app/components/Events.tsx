@@ -1,5 +1,6 @@
 import { useGetEvents } from '@/firebase/getData';
 import { Event } from './Event';
+import { Loading } from './Loading';
 
 // TODO: pagination
 // https://firebase.google.com/docs/firestore/query-data/query-cursors
@@ -9,7 +10,7 @@ export const Events = () => {
 
   const showEvents = events?.filter(event => event.hidden !== true);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (error) return <div>{error.toString()}</div>;
 
   return (

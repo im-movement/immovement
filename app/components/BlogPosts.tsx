@@ -1,5 +1,6 @@
 import { BlogPost, useGetBlogPosts } from '@/firebase/getData';
 import { BlogPostDisplay } from './BlogPost';
+import { Loading } from './Loading';
 
 // TODO: pagination
 // https://firebase.google.com/docs/firestore/query-data/query-cursors
@@ -9,7 +10,7 @@ export const BlogPosts: React.FC = () => {
 
   const showPosts = posts?.filter(p => p.hidden !== true);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (error) return <div>{error.toString()}</div>;
 
   return (

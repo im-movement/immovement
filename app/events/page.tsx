@@ -2,6 +2,7 @@
 import React from 'react';
 import { useGetEvents } from '@/firebase/getData';
 import Link from 'next/link';
+import { Loading } from '../components/Loading';
 
 // TODO: pagination
 // https://firebase.google.com/docs/firestore/query-data/query-cursors
@@ -9,7 +10,7 @@ import Link from 'next/link';
 const Page: React.FC = () => {
   const { events, loading, error } = useGetEvents();
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (error) return <div>{error.toString()}</div>;
   if (!events?.length) return <p>No events found</p>;
 

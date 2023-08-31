@@ -2,6 +2,7 @@
 import React from 'react';
 import { BlogPost, useGetBlogPosts } from '@/firebase/getData';
 import Link from 'next/link';
+import { Loading } from '../components/Loading';
 
 // TODO: pagination
 // https://firebase.google.com/docs/firestore/query-data/query-cursors
@@ -9,7 +10,7 @@ import Link from 'next/link';
 const Page: React.FC = () => {
   const { posts, loading, error } = useGetBlogPosts();
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (error) return <div>{error.toString()}</div>;
   if (!posts?.length) {
     return <p>No posts found</p>;

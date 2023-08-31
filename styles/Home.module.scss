@@ -24,7 +24,7 @@
 
   &:nth-of-type(even) {
     background: linear-gradient(
-      344deg,
+      -344deg,
       rgb(219, 78, 70) 0%,
       rgba(255, 207, 134, 1) 46%,
       rgb(219, 78, 70) 100%
@@ -46,6 +46,7 @@
 .heading {
   font-size: clamp(2rem, 3rem, 4rem);
   font-style: italic;
+  padding-bottom: 1rem;
 }
 
 .subHeading {
@@ -53,6 +54,7 @@
   transform: translateY(-1rem);
   font-weight: 100;
   margin-top: 1rem;
+  font-size: 1.5rem;
 }
 
 .hero {

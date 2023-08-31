@@ -4,6 +4,7 @@ import { NewEvent } from '@/firebase/addData';
 import { getEvent } from '@/firebase/getData';
 import { Modal } from '@/app/components/Modal';
 import Link from 'next/link';
+import { Loading } from '@/app/components/Loading';
 
 interface PageProps {
   params: { id: string };
@@ -40,7 +41,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
     alert('Sign up');
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
 
   return (
     <>
