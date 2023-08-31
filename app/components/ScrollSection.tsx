@@ -7,6 +7,7 @@ export const ScrollSection: React.FC = () => {
     const scrollContainer = document.querySelector('main');
     const grabScroll = (e: Event) => {
       e.preventDefault();
+      console.log(e);
       if (!disableScroll) {
         if (scrollContainer) {
           disableScroll = true;

@@ -1,13 +1,16 @@
 .header {
   // padding-top: 2rem;
-  width: 100%;
+  // width: 100%;
   padding-inline: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
+  position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   height: 10rem;
+  z-index: 1;
   .logo {
     display: flex;
     flex-direction: column;
