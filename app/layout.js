@@ -1,5 +1,4 @@
 'use client';
-import { useEffect } from 'react';
 import '../styles/globals.css';
 import { AuthContextProvider } from '@/context/AuthContext';
 import { useIsIOS } from './components/useIsIOS';

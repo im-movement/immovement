@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import Logo from './Logo';
 import styles from '@/styles/Header.module.scss';
+import { inter, oswald } from '@/styles/fonts';
 
 const LINKS = [
   { title: 'Events', href: '/events' },
@@ -17,7 +18,7 @@ export const Header: React.FC = () => {
     <header className={styles.header}>
       <Logo />
       <div className={styles.navContainer}>
-        <nav>
+        <nav className={oswald.className}>
           {LINKS.map(l => (
             <Link href={l.href}>{l.title}</Link>
           ))}
