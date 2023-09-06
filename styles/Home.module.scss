@@ -1,4 +1,12 @@
 .main {
+  min-height: 100vh;
+  background: var(--blue-gradient);
+  color: white;
+  padding-top: 10rem;
+  padding-left: 2rem;
+}
+
+.mainHorizontal {
   scroll-snap-type: x mandatory;
   display: flex;
   -webkit-overflow-scrolling: touch;
@@ -23,29 +31,16 @@
   }
 
   &:nth-of-type(even) {
-    background: linear-gradient(
-      -344deg,
-      rgb(219, 78, 70) 0%,
-      rgba(255, 207, 134, 1) 46%,
-      rgb(219, 78, 70) 100%
-    );
+    background: var(--orange-gradient);
   }
 
   &:nth-of-type(odd) {
-    background: linear-gradient(
-      344deg,
-      rgba(15, 24, 61, 1) 0%,
-      rgba(71, 74, 128, 1) 46%,
-      rgba(43, 49, 94, 1) 62%,
-      rgba(45, 50, 96, 1) 73%,
-      rgba(15, 24, 61, 1) 100%
-    );
+    background: var(--blue-gradient);
   }
 }
 
 .heading {
   font-size: clamp(2rem, 3rem, 4rem);
-  font-style: italic;
   padding-bottom: 1rem;
 }
 

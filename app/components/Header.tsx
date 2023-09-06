@@ -16,14 +16,18 @@ const LINKS = [
 export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
-      <Logo />
+      <Link href={'/'}>
+        <Logo />
+      </Link>
       <div className={styles.navContainer}>
         <nav className={oswald.className}>
           {LINKS.map(l => (
             <Link href={l.href}>{l.title}</Link>
           ))}
         </nav>
-        <FaInstagram size="2rem" color="white" />
+        <a href="https://www.instagram.com/isabellecmuller/" target="_blank">
+          <FaInstagram size="2rem" color="white" />
+        </a>
       </div>
     </header>
   );

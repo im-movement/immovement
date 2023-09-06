@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
       */}
       <head>
         <meta name="theme-color" content="#000" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <AuthContextProvider>{children}</AuthContextProvider>
