@@ -1,11 +1,10 @@
-import { Oswald, Julius_Sans_One } from 'next/font/google';
+import { Oswald, Inter } from 'next/font/google';
 // import localFont from 'next/font/local';
 
 // // define your variable fonts
-// const inter = Inter();
+const inter = Inter({ subsets: ['latin'] });
 // const lora = Lora();
-const oswald = Oswald({ subsets: ['latin'] });
-const julis = Julius_Sans_One({ weight: '400', subsets: ['latin'] });
+const oswald = Oswald({ weight: '200', subsets: ['latin'] });
 // // define 2 weights of a non-variable font
 // // const sourceCodePro400 = Source_Sans_3({ weight: '400' });
 // // const sourceCodePro700 = Source_Sans_3({ weight: '700' });
@@ -13,7 +12,7 @@ const julis = Julius_Sans_One({ weight: '400', subsets: ['latin'] });
 // // const greatVibes = localFont({ src: './GreatVibes-Regular.ttf' });
 
 export {
-  // inter,
+  inter,
   // lora,
   oswald,
   // sourceCodePro400, sourceCodePro700, greatVibes

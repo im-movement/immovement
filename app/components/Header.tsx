@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import Logo from './Logo';
 import styles from '@/styles/Header.module.scss';
-import { inter, oswald } from '@/styles/fonts';
+import { oswald } from '@/styles/fonts';
 
 const LINKS = [
   { title: 'Events', href: '/events' },
