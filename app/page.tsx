@@ -10,7 +10,6 @@ const Home = () => {
       <section className={styles.screen}>
         <h1 className={styles.heading}>IMMOVEMENT</h1>
         <HeroImage />
-        <h2 className={styles.subHeading}>coming soon...</h2>
       </section>
       <section className={styles.screen}>
         <h2>Upcoming events</h2>
