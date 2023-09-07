@@ -19,7 +19,7 @@ export const MainLayout: React.FC<MainLayoutProps> = props => {
   return (
     <>
       <Head>
-        <title>IM Movement</title>
+        <title>IMMOVEMENT</title>
         <meta name="description" content={title} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="transparent" />

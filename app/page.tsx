@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <MainLayout horizontal>
       <section className={styles.screen}>
-        <h1 className={styles.heading}>IM Movement</h1>
+        <h1 className={styles.heading}>IMMOVEMENT</h1>
         <HeroImage />
         <h2 className={styles.subHeading}>coming soon...</h2>
       </section>
