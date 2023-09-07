@@ -17,7 +17,7 @@ const LINKS = [
 
 const MobileNav: React.FC = () => {
   const setMenuPosition = (e: boolean) => {
-    const position = e ? '0' : '-100vw';
+    const position = e ? '0' : '-200vw';
     document.documentElement.style.setProperty(
       '--menu-position',
       `${position}`,
