@@ -11,8 +11,8 @@
   height: 10rem;
   z-index: 1;
 
-  h1 {
-    color: white;
+  .heading {
+    font-size: 1rem;
   }
 
   .navContainer {
@@ -51,6 +51,7 @@
   min-width: 95vw;
   margin-top: 1rem;
   backdrop-filter: blur(5px);
+  font-size: 1.25rem;
 }
 
 .mobileNavContainer {
