@@ -1,6 +1,5 @@
 .header {
   padding-top: var(—-header-padding);
-  // width: 100%;
   padding-inline: 2rem;
   display: flex;
   align-items: center;
@@ -23,6 +22,9 @@
     gap: 1.75rem;
     padding-top: 2rem;
     margin-right: 1rem;
+    @media (max-width: 719px) {
+      display: none;
+    }
   }
 
   nav {
@@ -30,5 +32,29 @@
     gap: 3rem;
     color: white;
     font-size: 1.25rem;
+  }
+}
+
+.mobileNav {
+  position: absolute;
+  right: var(--menu-position);
+  transition: right 350ms;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 3rem;
+  background-color: rgba(0, 0, 0, 0.321);
+  color: white;
+  gap: 1.25rem;
+  border-top-left-radius: 1rem;
+  height: 100vh;
+  min-width: 95vw;
+  margin-top: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.mobileNavContainer {
+  @media (min-width: 720px) {
+    display: none;
   }
 }

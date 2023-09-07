@@ -1,6 +1,7 @@
 :root {
   —-app-height: 100%;
   --header-padding: 0;
+  --menu-position: -100vw;
   --blue-gradient: linear-gradient(
     344deg,
     rgba(15, 24, 61, 1) 0%,
