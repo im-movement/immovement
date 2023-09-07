@@ -32,11 +32,13 @@ const MobileNav: React.FC = () => {
         color="white"
         onToggle={setMenuPosition}
       />
-      <div className={styles.mobileNav}>
-        {LINKS.map(l => (
-          <Link href={l.href}>{l.title}</Link>
-        ))}
-      </div>
+      <nav className={oswald.className}>
+        <div className={styles.mobileNav}>
+          {LINKS.map(l => (
+            <Link href={l.href}>{l.title}</Link>
+          ))}
+        </div>
+      </nav>
     </div>
   );
 };

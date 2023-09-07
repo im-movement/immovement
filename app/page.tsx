@@ -3,8 +3,12 @@ import styles from '@/styles/Home.module.scss';
 import { FaInstagram } from 'react-icons/fa';
 import { MainLayout } from './components/MainLayout';
 import { HeroImage } from './components/HeroImage';
+import { useEffect } from 'react';
 
 const Home = () => {
+  const scroll = () => console.log('scroll');
+  setTimeout(scroll, 300);
+  console.log('hello?');
   return (
     <MainLayout horizontal>
       <section className={styles.screen}>
