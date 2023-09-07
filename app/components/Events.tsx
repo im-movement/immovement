@@ -15,7 +15,7 @@ export const Events = () => {
 
   return (
     <section>
-      <h2>Events</h2>
+      <h2>Upcoming events</h2>
       <ul>
         {showEvents?.length ? (
           showEvents?.map(event => <Event event={event} key={event.id} />)
