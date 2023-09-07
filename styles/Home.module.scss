@@ -1,9 +1,21 @@
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .main {
   min-height: 100vh;
   background: var(--blue-gradient);
   color: white;
   padding-top: 10rem;
   padding-left: 2rem;
+  animation: fadeInAnimation ease 500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .mainHorizontal {
