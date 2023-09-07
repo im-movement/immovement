@@ -5,6 +5,7 @@ import { getEvent } from '@/firebase/getData';
 import { Modal } from '@/app/components/Modal';
 import Link from 'next/link';
 import { Loading } from '@/app/components/Loading';
+import { MainLayout } from '@/app/components/MainLayout';
 
 interface PageProps {
   params: { id: string };
@@ -44,7 +45,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
   if (loading) return <Loading />;
 
   return (
-    <>
+    <MainLayout>
       <Link href="/events">{'< Back to all events'}</Link>
       <section>
         {/* <Modal title="Edit" /> */}
@@ -54,7 +55,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
         <h2>{event.title}</h2>
       </section>
       <button onClick={handleSignup}>Sign up</button>
-    </>
+    </MainLayout>
   );
 };
 

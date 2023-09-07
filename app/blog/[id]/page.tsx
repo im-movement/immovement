@@ -6,6 +6,7 @@ import { format } from 'date-fns';
 
 import { getBlogPost } from '@/firebase/getData';
 import { Loading } from '@/app/components/Loading';
+import { MainLayout } from '@/app/components/MainLayout';
 
 interface PageProps {
   params: { id: string };
@@ -30,7 +31,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
   if (loading) return <Loading />;
 
   return (
-    <>
+    <MainLayout>
       <Link href="/blog">{'< Back to all posts'}</Link>
       <section>
         <h2>{post?.title}</h2>
@@ -41,7 +42,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
         </h3>
         <p>{post?.content}</p>
       </section>
-    </>
+    </MainLayout>
   );
 };
 
