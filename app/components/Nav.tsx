@@ -41,19 +41,25 @@ const MobileNav: React.FC = () => {
   );
 };
 
+const FullWidthNav = () => {
+  return (
+    <div className={styles.navContainer}>
+      <nav className={oswald.className}>
+        {LINKS.map(l => (
+          <Link href={l.href}>{l.title}</Link>
+        ))}
+      </nav>
+      <a href="https://www.instagram.com/isabellecmuller/" target="_blank">
+        <FaInstagram size="2rem" color="white" />
+      </a>
+    </div>
+  );
+};
+
 export const Nav: React.FC = () => {
   return (
     <>
-      <div className={styles.navContainer}>
-        <nav className={oswald.className}>
-          {LINKS.map(l => (
-            <Link href={l.href}>{l.title}</Link>
-          ))}
-        </nav>
-        <a href="https://www.instagram.com/isabellecmuller/" target="_blank">
-          <FaInstagram size="2rem" color="white" />
-        </a>
-      </div>
+      <FullWidthNav />
       <MobileNav />
     </>
   );

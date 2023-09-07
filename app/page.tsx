@@ -1,4 +1,3 @@
-// 'use client';
 import styles from '@/styles/Home.module.scss';
 
 import { FaInstagram } from 'react-icons/fa';
