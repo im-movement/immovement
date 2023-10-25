@@ -4,7 +4,6 @@ import { FaInstagram } from 'react-icons/fa';
 import { MainLayout } from './components/MainLayout';
 import { HeroImage } from './components/HeroImage';
 import { useEffect } from 'react';
-import { UpcomingEvents } from './components/LandingPage/UpcomingEvents';
 import { EventsImage } from './components/EventsImage';
 import { Button } from './components/Button';
 import { LinkButton } from './components/LinkButton';
