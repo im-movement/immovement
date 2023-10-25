@@ -109,6 +109,7 @@ export const useGetEvents = () => {
             ...doc.data(),
           });
         });
+        res.filter(event => event.hidden !== true);
         // @ts-ignore
         setEvents(res);
         setLoading(false);

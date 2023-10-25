@@ -1,17 +1,17 @@
 import Image from 'next/image';
 import styles from '@/styles/Home.module.scss';
-import izzy from '../../public/izzy.jpg';
+import events from '../../public/events.png';
 
-export const HeroImage = () => {
+export const EventsImage = () => {
   return (
     <Image
       className={styles.hero}
-      src={izzy}
+      src={events}
       alt="Isabelle wearing all white standing under two chevron neon lights; one light is red and one is blue"
       width={1290}
       height={1609}
       placeholder="blur"
-      priority={true}
+      priority
       layout="responsive"
     />
   );

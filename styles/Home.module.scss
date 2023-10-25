@@ -28,9 +28,11 @@
 
 .screen {
   padding-top: 6rem;
+  padding-inline: 6rem;
   height: 100vh;
   min-width: 100vw;
   display: flex;
+  gap: 2rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -43,8 +45,15 @@
     text-align: center;
   }
 
+  h2 {
+    font-size: 2rem;
+  }
+
   &:nth-of-type(even) {
     background: var(--orange-gradient);
+    h2 {
+      color: #333;
+    }
   }
 
   &:nth-of-type(odd) {
@@ -54,7 +63,6 @@
 
 .heading {
   font-size: clamp(2rem, 4vw + 1rem, 3rem);
-  padding-bottom: 1rem;
 }
 
 .hero {

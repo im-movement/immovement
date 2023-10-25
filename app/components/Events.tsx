@@ -7,8 +7,7 @@ import { Loading } from './Loading';
 
 export const Events = () => {
   const { events, loading, error } = useGetEvents();
-
-  const showEvents = events?.filter(event => event.hidden !== true);
+  // const showEvents = events?.filter(event => event.hidden !== true);
 
   if (loading) return <Loading />;
   if (error) return <div>{error.toString()}</div>;
@@ -17,8 +16,8 @@ export const Events = () => {
     <section>
       <h2>Upcoming events</h2>
       <ul>
-        {showEvents?.length ? (
-          showEvents?.map(event => <Event event={event} key={event.id} />)
+        {events?.length ? (
+          events?.map(event => <Event event={event} key={event.id} />)
         ) : (
           <p>No events found</p>
         )}
