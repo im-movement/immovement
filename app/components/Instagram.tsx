@@ -8,7 +8,7 @@ import styles from '@/styles/Header.module.scss';
 
 export const Instagram: React.FC = () => {
   return (
-    <div style={{ borderRadius: '0.25rem' }}>
+    <>
       <blockquote
         className="instagram-media"
         data-instgrm-permalink="https://www.instagram.com/isabellecmuller/?utm_source=ig_embed&amp;utm_campaign=loading"
@@ -23,9 +23,9 @@ export const Instagram: React.FC = () => {
           minWidth: '326px',
           padding: 0,
           width: 'calc(100% - 2px)',
+          maxHeight: '85%',
         }}>
         <div style={{ padding: '16px' }}>
-          {' '}
           <a
             href="https://www.instagram.com/isabellecmuller/?utm_source=ig_embed&amp;utm_campaign=loading"
             style={{
@@ -37,14 +37,12 @@ export const Instagram: React.FC = () => {
               width: '100%',
             }}
             target="_blank">
-            {' '}
             <div
               style={{
                 display: 'flex',
                 flexDirection: 'row',
                 alignItems: 'center',
               }}>
-              {' '}
               <div
                 style={{
                   backgroundColor: '#F4F4F4',
@@ -61,7 +59,6 @@ export const Instagram: React.FC = () => {
                   flexGrow: 1,
                   justifyContent: 'center',
                 }}>
-                {' '}
                 <div
                   style={{
                     backgroundColor: '#F4F4F4',
@@ -70,7 +67,7 @@ export const Instagram: React.FC = () => {
                     height: '14px',
                     marginBottom: '6px',
                     width: '100px',
-                  }}></div>{' '}
+                  }}></div>
                 <div
                   style={{
                     backgroundColor: '#F4F4F4',
@@ -113,7 +110,6 @@ export const Instagram: React.FC = () => {
               </svg>
             </div>
             <div style={{ paddingTop: '8px' }}>
-              {' '}
               <div
                 style={{
                   color: '#3897f0',
@@ -135,7 +131,6 @@ export const Instagram: React.FC = () => {
                 alignItems: 'center',
               }}>
               <div>
-                {' '}
                 <div
                   style={{
                     backgroundColor: '#F4F4F4',
@@ -143,7 +138,7 @@ export const Instagram: React.FC = () => {
                     height: '12.5px',
                     width: '12.5px',
                     transform: 'translateX(0px) translateY(7px)',
-                  }}></div>{' '}
+                  }}></div>
                 <div
                   style={{
                     backgroundColor: '#F4F4F4',
@@ -153,7 +148,7 @@ export const Instagram: React.FC = () => {
                     flexGrow: 0,
                     marginRight: '14px',
                     marginLeft: '2px',
-                  }}></div>{' '}
+                  }}></div>
                 <div
                   style={{
                     backgroundColor: '#F4F4F4',
@@ -164,7 +159,6 @@ export const Instagram: React.FC = () => {
                   }}></div>
               </div>
               <div style={{ marginLeft: '8px' }}>
-                {' '}
                 <div
                   style={{
                     backgroundColor: '#F4F4F4',
@@ -172,7 +166,7 @@ export const Instagram: React.FC = () => {
                     flexGrow: 0,
                     height: '20px',
                     width: '20px',
-                  }}></div>{' '}
+                  }}></div>
                 <div
                   style={{
                     width: '0',
@@ -185,14 +179,13 @@ export const Instagram: React.FC = () => {
                   }}></div>
               </div>
               <div style={{ marginLeft: 'auto' }}>
-                {' '}
                 <div
                   style={{
                     width: '0px',
                     borderTop: '8px solid #F4F4F4',
                     borderRight: '8px solid transparent',
                     transform: 'translateY(16px)',
-                  }}></div>{' '}
+                  }}></div>
                 <div
                   style={{
                     backgroundColor: '#F4F4F4',
@@ -200,7 +193,7 @@ export const Instagram: React.FC = () => {
                     height: '12px',
                     width: '16px',
                     transform: 'translateY(-4px)',
-                  }}></div>{' '}
+                  }}></div>
                 <div
                   style={{
                     width: '0',
@@ -285,6 +278,6 @@ export const Instagram: React.FC = () => {
         </div>
       </blockquote>{' '}
       <script async src="//www.instagram.com/embed.js"></script>
-    </div>
+    </>
   );
 };

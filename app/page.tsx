@@ -55,14 +55,10 @@ const Home = () => {
         <h2>Work with me</h2>
       </section>
       <section className={styles.screen}>
-        <a
-          href="https://instagram.com/isabellecmuller"
-          rel="noreferer"
-          target="_blank">
-          <FaInstagram size="2rem" color="white" />
-        </a>
-        <h2>Find me on Instagram</h2>
-        <Instagram />
+        <div className={styles.instagram}>
+          <h2>Find me on Instagram</h2>
+          <Instagram />
+        </div>
       </section>
     </MainLayout>
   );
