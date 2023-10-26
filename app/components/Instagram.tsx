@@ -276,7 +276,7 @@ export const Instagram: React.FC = () => {
             ) • Instagram photos and videos
           </p>
         </div>
-      </blockquote>{' '}
+      </blockquote>
       <script async src="//www.instagram.com/embed.js"></script>
     </>
   );

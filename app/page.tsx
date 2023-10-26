@@ -1,39 +1,32 @@
 import styles from '@/styles/Home.module.scss';
 
-import { FaInstagram } from 'react-icons/fa';
 import { MainLayout } from './components/MainLayout';
-import { HeroImage } from './components/HeroImage';
-import { useEffect } from 'react';
-import { EventsImage } from './components/EventsImage';
-import { Button } from './components/Button';
+import { HeroImage } from './components/Images/HeroImage';
+import { EventsImage } from './components/Images/EventsImage';
 import { LinkButton } from './components/LinkButton';
 import { Instagram } from './components/Instagram';
+import { AboutImage } from './components/Images/AboutImage';
 
 const Home = () => {
-  // const scroll = () => console.log('scroll');
-  // setTimeout(scroll, 300);
-  // console.log('hello?');
   return (
     <MainLayout horizontal>
       <section className={styles.screen}>
-        <h1 className={styles.heading}>IMMOVEMENT</h1>
-        <HeroImage />
+        <div className={styles.heroSection}>
+          <HeroImage />
+          <h1 className={styles.heading}>IMMOVEMENT</h1>
+        </div>
       </section>
       <section className={styles.screen}>
-        <h2>Events</h2>
-        <EventsImage />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-          ullam praesentium officia incidunt, placeat eos deserunt doloribus
-          labore, ipsa iure dolorum similique aspernatur eligendi. Magnam,
-          quibusdam eius. Molestiae non labore impedit recusandae aut fugiat sit
-          quae, corporis expedita. Dolores eum molestiae, error esse numquam
-          impedit vel neque vitae iste inventore!
-        </p>
+        <div>
+          <h2>Events</h2>
+          <EventsImage />
+        </div>
+        <p>Live in-person events including dance classes and more</p>
         <LinkButton title="View upcoming events" href="/events" />
       </section>
       <section className={styles.screen}>
         <h2>About</h2>
+        <AboutImage />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
           reprehenderit expedita facere a soluta architecto ratione, alias natus
