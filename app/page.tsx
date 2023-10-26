@@ -17,11 +17,11 @@ const Home = () => {
         </div>
       </section>
       <section className={styles.screen}>
-        <div>
+        <div className={styles.card}>
           <h2>Events</h2>
           <EventsImage />
+          <p>Live in-person events including dance classes and more</p>
         </div>
-        <p>Live in-person events including dance classes and more</p>
         <LinkButton title="View upcoming events" href="/events" />
       </section>
       <section className={styles.screen}>
@@ -48,7 +48,7 @@ const Home = () => {
         <h2>Work with me</h2>
       </section>
       <section className={styles.screen}>
-        <div className={styles.instagram}>
+        <div className={styles.card}>
           <h2>Find me on Instagram</h2>
           <Instagram />
         </div>

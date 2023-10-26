@@ -88,20 +88,29 @@
   grid-template-rows: 1fr;
 }
 
+.eventsImage {
+  max-width: 40vw;
+}
+
 .social {
   display: flex;
   gap: 2rem;
   padding-bottom: 2rem;
 }
 
-.instagram {
+.card {
   padding-inline: 2rem;
   padding-block: 1rem;
   border-radius: 1rem;
   background-color: #efefe8;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
+  p {
+    display: flex;
+    flex-wrap: wrap;
+  }
   // max-height: 80%;
   // overflow: hidden;
 }

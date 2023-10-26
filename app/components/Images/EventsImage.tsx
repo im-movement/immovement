@@ -5,11 +5,11 @@ import img from '../../../public/events.png';
 export const EventsImage = () => {
   return (
     <Image
-      className={styles.hero}
+      className={styles.eventsImage}
       src={img}
       alt="Isabelle wearing red dress in class"
-      width={1290}
-      height={1609}
+      // width={1290}
+      // height={1609}
       placeholder="blur"
       priority
       layout="responsive"
