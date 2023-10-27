@@ -27,7 +27,7 @@
 }
 
 .screen {
-  padding-top: 6rem;
+  padding-top: 4rem;
   padding-inline: 6rem;
   height: 100vh;
   min-width: 100vw;
@@ -46,7 +46,6 @@
   }
 
   h1 {
-    // font-size: 8rem;
     background-color: rgba(0, 0, 0, 0.351);
     padding-block: 1rem;
     padding-inline: 2rem;
@@ -57,7 +56,6 @@
 
   h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
   }
 
   &:nth-of-type(even) {
@@ -99,8 +97,9 @@
 }
 
 .card {
-  padding-inline: 2rem;
-  padding-block: 1rem;
+  padding-inline: 3rem;
+  padding-block-start: 1.5rem;
+  padding-block-end: 2rem;
   border-radius: 1rem;
   background-color: #efefe8;
   display: flex;
@@ -110,7 +109,6 @@
   p {
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
   }
-  // max-height: 80%;
-  // overflow: hidden;
 }

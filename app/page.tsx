@@ -20,7 +20,10 @@ const Home = () => {
         <div className={styles.card}>
           <h2>Events</h2>
           <EventsImage />
-          <p>Live in-person events including dance classes and more</p>
+          <p>
+            Sign up to attend live in-person events including dance classes and
+            more
+          </p>
         </div>
         <LinkButton title="View upcoming events" href="/events" />
       </section>
@@ -33,12 +36,6 @@ const Home = () => {
           illum tempore, laborum voluptatibus modi ipsa repellat! Necessitatibus
           dolorum atque, incidunt eligendi nam, quod dolores hic fuga distinctio
           id quis dolore vitae ex repellat aliquid, accusamus totam dolorem?
-          Tempora ratione ut aut illo eligendi repellendus asperiores nesciunt
-          voluptatem voluptatum in, aperiam facilis similique eum, blanditiis
-          error laudantium. Laudantium, repellat harum modi praesentium fuga ad
-          pariatur delectus animi aliquam labore veritatis beatae ab maxime
-          dignissimos error sed blanditiis repellendus totam. Placeat explicabo
-          rem et obcaecati illum, quo earum nobis modi iusto quidem officiis!
         </p>
       </section>
       <section className={styles.screen}>
@@ -49,7 +46,7 @@ const Home = () => {
       </section>
       <section className={styles.screen}>
         <div className={styles.card}>
-          <h2>Find me on Instagram</h2>
+          <h2>Follow me on Instagram</h2>
           <Instagram />
         </div>
       </section>
