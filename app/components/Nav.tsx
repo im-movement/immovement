@@ -10,8 +10,8 @@ import { FaInstagram } from 'react-icons/fa';
 
 const LINKS = [
   { title: 'Events', href: '/events' },
-  { title: 'Blog', href: '/blog' },
   { title: 'About', href: '#about' },
+  { title: 'Blog', href: '/blog' },
   { title: 'Work with me', href: '#work-with-me' },
 ];
 
