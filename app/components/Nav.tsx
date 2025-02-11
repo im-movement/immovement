@@ -1,5 +1,6 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
 import Link from 'next/link';
 
 import styles from '@/styles/Header.module.scss';
@@ -15,7 +16,7 @@ const LINKS = [
   { title: 'Work with me', href: '#work-with-me' },
 ];
 
-const MobileNav: React.FC = () => {
+const VeggieBurger: React.FC = props => {
   const setMenuPosition = (e: boolean) => {
     const position = e ? '0' : '-200vw';
     document.documentElement.style.setProperty(
@@ -25,7 +26,7 @@ const MobileNav: React.FC = () => {
   };
 
   return (
-    <div className={styles.mobileNavContainer}>
+    <>
       <Hamburger
         rounded
         label="Show menu"
@@ -35,26 +36,63 @@ const MobileNav: React.FC = () => {
       <nav className={oswald.className}>
         <div className={styles.mobileNav}>
           {LINKS.map(l => (
-            <Link href={l.href}>{l.title}</Link>
+            <Link key={l.href} href={l.href}>
+              {l.title}
+            </Link>
           ))}
         </div>
       </nav>
+    </>
+  );
+};
+
+const MobileNav: React.FC = props => {
+  return (
+    <div className={styles.mobileNavContainer}>
+      <VeggieBurger />
     </div>
   );
 };
 
 const FullWidthNav = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 150) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const Nav = () => {
+    return (
+      <div className={styles.navContainer}>
+        <nav className={oswald.className}>
+          {LINKS.map(l => (
+            <Link key={l.href} href={l.href}>
+              {l.title}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    );
+  };
+
   return (
-    <div className={styles.navContainer}>
-      <nav className={oswald.className}>
-        {LINKS.map(l => (
-          <Link href={l.href}>{l.title}</Link>
-        ))}
-      </nav>
+    <>
+      {scrolled ? <VeggieBurger /> : <Nav />}
       <a href="https://www.instagram.com/isabellecmuller/" target="_blank">
         <FaInstagram size="2rem" color="white" />
       </a>
-    </div>
+    </>
   );
 };
 

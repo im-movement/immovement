@@ -3,8 +3,8 @@ import React from 'react';
 const Logo: React.FC = () => {
   return (
     <svg
-      width="69" //377
-      height="50.33" //275
+      width="50" //377
+      height="36.47" //275
       viewBox="0 0 377 275"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">

@@ -4,11 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 10rem;
+  height: 8rem;
   z-index: 1;
 
   .heading {
@@ -17,10 +17,10 @@
 
   .navContainer {
     display: flex;
-    flex-direction: column;
+    position: sticky;
+    top: 0;
     align-items: end;
     gap: 1.75rem;
-    padding-top: 2rem;
     margin-right: 1rem;
     @media (max-width: 719px) {
       display: none;
@@ -32,11 +32,29 @@
     gap: 3rem;
     color: white;
     font-size: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.231);
+    backdrop-filter: blur(5px);
+    padding: 0.5rem;
+    border-radius: 90% / 10%;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+
+    &.hidden {
+      opacity: 0;
+    }
     a {
-      background-color: rgba(0, 0, 0, 0.1);
       padding-inline: 0.65rem;
       padding-block: 0.25rem;
-      border-radius: 0.5rem;
+      border-radius: 0.25rem;
+      transition: background-color 0.5s;
+
+      &:hover {
+        background-color: rgba(251, 251, 251, 0.5);
+        color: rgb(37, 37, 37);
+        font-weight: bold;
+        transition: background-color 0.25s ease, color 0.25s ease,
+          font-weight 0.25s ease;
+      }
     }
   }
 }

@@ -10,11 +10,7 @@ interface MainLayoutProps {
 }
 
 export const MainLayout: React.FC<MainLayoutProps> = props => {
-  const {
-    title = 'Sign up for dance classes in DFW Texas',
-    children,
-    horizontal = false,
-  } = props;
+  const { title = 'Sign up for dance classes in DFW Texas', children } = props;
 
   return (
     <>
@@ -25,9 +21,7 @@ export const MainLayout: React.FC<MainLayoutProps> = props => {
         <meta name="theme-color" content="transparent" />
       </Head>
       <Header />
-      <main className={horizontal ? styles.mainHorizontal : styles.main}>
-        {children}
-      </main>
+      <main className={styles.main}>{children}</main>
     </>
   );
 };
