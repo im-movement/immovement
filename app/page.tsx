@@ -17,13 +17,13 @@ const Home = () => {
       <section className={styles.section}>
         <div className={styles.card}>
           <h2>Events</h2>
-          <EventsImage />
           <p>
-            Sign up to attend live in-person events including dance classes and
-            more.
+            Join us to experience the energy of live, in-person events,
+            including dance classes, workshops, and performances.{' '}
           </p>
+          <LinkButton title="Sign up today!" href="/events" />
+          <EventsImage />
         </div>
-        <LinkButton title="View upcoming events" href="/events" />
       </section>
       <section className={styles.section} id="about">
         <h2>About</h2>

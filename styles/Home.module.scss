@@ -80,6 +80,8 @@
 
 .eventsImage {
   max-width: 40vw;
+  margin-top: 1rem;
+  border-radius: 0.25rem;
 }
 
 .social {
@@ -89,7 +91,6 @@
 }
 
 .card {
-  padding-inline: 3rem;
   padding-block-start: 1.5rem;
   padding-block-end: 2rem;
   border-radius: 1rem;
@@ -101,6 +102,7 @@
   p {
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
+    color: black;
+    padding-block: 0.7rem;
   }
 }

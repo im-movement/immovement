@@ -8,7 +8,7 @@ import styles from '@/styles/Header.module.scss';
 
 export const Instagram: React.FC = () => {
   return (
-    <>
+    <div style={{ blockSize: '80%', inlineSize: '80%' }}>
       <blockquote
         className="instagram-media"
         data-instgrm-permalink="https://www.instagram.com/isabellecmuller/?utm_source=ig_embed&amp;utm_campaign=loading"
@@ -278,6 +278,6 @@ export const Instagram: React.FC = () => {
         </div>
       </blockquote>
       <script async src="//www.instagram.com/embed.js"></script>
-    </>
+    </div>
   );
 };
