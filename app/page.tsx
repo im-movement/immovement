@@ -46,12 +46,12 @@ const Home = () => {
       <section className={styles.section} id="work-with-me">
         <h2>Work with me</h2>
       </section>
-      <section className={styles.section}>
-        <div className={styles.card}>
-          <h2>Follow me on Instagram</h2>
-          <Instagram />
-        </div>
-      </section>
+      {/* <section className={styles.section}> */}
+      {/* <div className={styles.card}> */}
+      {/* <h2>Follow me on Instagram</h2> */}
+      <Instagram />
+      {/* </div> */}
+      {/* </section> */}
     </MainLayout>
   );
 };

@@ -1,4 +1,10 @@
-import { Oswald, Inter, Roboto_Mono } from 'next/font/google';
+import {
+  Oswald,
+  Inter,
+  Roboto_Mono,
+  Roboto,
+  Roboto_Serif,
+} from 'next/font/google';
 // import localFont from 'next/font/local';
 
 // // define your variable fonts
@@ -6,6 +12,8 @@ const inter = Inter({ subsets: ['latin'] });
 // const lora = Lora();
 const oswald = Oswald({ weight: '200', subsets: ['latin'] });
 const robotoMono = Roboto_Mono({ weight: '200', subsets: ['latin'] });
+const roboto = Roboto({ weight: '300', subsets: ['latin'] });
+const robotoSerif = Roboto({ weight: '300', subsets: ['latin'] });
 // // define 2 weights of a non-variable font
 // // const sourceCodePro400 = Source_Sans_3({ weight: '400' });
 // // const sourceCodePro700 = Source_Sans_3({ weight: '700' });
@@ -17,5 +25,7 @@ export {
   // lora,
   oswald,
   robotoMono,
+  roboto,
+  robotoSerif,
   // sourceCodePro400, sourceCodePro700, greatVibes
 };
